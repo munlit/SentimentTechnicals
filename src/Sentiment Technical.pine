@@ -1,8 +1,7 @@
-// This work is licensed under a Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) https://creativecommons.org/licenses/by-nc-sa/4.0/
 // © LuxAlgo
-//@version=5
 
-indicator('Market Sentiment Technicals [LuxAlgo]', 'LuxAlgo - Market Sentiment Technicals', true, scale = scale.none)
+//@version=5
+indicator('Market Sentiment Technicals [@Allen.]', 'Market Sentiment Technicals', true, scale = scale.none)
 
 //---------------------------------------------------------------------------------------------------------------------
 // Settings 
@@ -27,7 +26,7 @@ mrktMtr_Show = input.bool(true, 'Market Sentiment Meter', group = 'Market Sentim
 
 mrktOsc_Group      = 'Market Sentiment Oscillator'
 mrktOsc_Show       = input.bool(true, 'Market Sentiment Oscillator', group = mrktOsc_Group)
-mrktOsc_Divergence = input.string('None', "  Show Divergence", options = ['Regular', 'Hidden', 'All', 'None'], group = mrktOsc_Group, display = display)
+mrktOsc_Divergence = input.string('All', "  Show Divergence", options = ['Regular', 'Hidden', 'All', 'None'], group = mrktOsc_Group, display = display)
 mrktOsc_lnWidth    = input.int(1, '  Oscillator Line Width', minval = 1, group = mrktOsc_Group, display = display)
 mrktOsc_height     = input.float(3.5, '  Oscillator Height',  minval = 0, step = .5, group = mrktOsc_Group, display = display)
 
@@ -325,7 +324,7 @@ processData(show, timeframe, closeValue, rsiValue, stochValue, stochRSIValue, cc
              color = color(na), style = label.style_label_down, textcolor = chart.fg_color))
 
         tiPanel.tiTitles.push(label.new(
-             hOffset + bar_index, interpolate(75, 100, 0, size, 0) + offset, 'Overbought', 
+             hOffset + bar_index, interpolate(75, 100, 0, size, 0) + offset, 'Sobre Compra', 
              color = color(na), style = label.style_label_right, textcolor = bullColor))
 
         tiPanel.tiTitles.push(label.new(
@@ -333,19 +332,19 @@ processData(show, timeframe, closeValue, rsiValue, stochValue, stochRSIValue, cc
              color = color(na), style = label.style_label_right, textcolor = #787b86))
 
         tiPanel.tiTitles.push(label.new(
-             hOffset + bar_index, interpolate(25, 100, 0, size, 0) + offset, 'Oversold', 
+             hOffset + bar_index, interpolate(25, 100, 0, size, 0) + offset, 'Sobre Venta', 
              color = color(na), style = label.style_label_right, textcolor = bearColor))
 
         tiPanel.tiTitles.push(label.new(
-             hOffset + bar_index + 3 * (pSize + 1), interpolate(75, 100, 0, size, 0) + offset, 'Strong Bullish Trend', 
+             hOffset + bar_index + 3 * (pSize + 1), interpolate(75, 100, 0, size, 0) + offset, 'Tendencia de Compra Fuerte', 
              color = color(na), style = label.style_label_left, textcolor = bullColor))
 
         tiPanel.tiTitles.push(label.new(
-             hOffset + bar_index + 3 * (pSize + 1), interpolate(50, 100, 0, size, 0) + offset, 'Trendless', 
+             hOffset + bar_index + 3 * (pSize + 1), interpolate(50, 100, 0, size, 0) + offset, 'Neutral', 
              color = color(na), style = label.style_label_left, textcolor = #787b86))
 
         tiPanel.tiTitles.push(label.new(
-             hOffset + bar_index + 3 * (pSize + 1), interpolate(25, 100, 0, size, 0) + offset, 'Strong Bearish Trend', 
+             hOffset + bar_index + 3 * (pSize + 1), interpolate(25, 100, 0, size, 0) + offset, 'Tendencia de Venta Fuerte', 
              color = color(na), style = label.style_label_left, textcolor = bearColor))
 
         tiPanel.tiValues.push(box.new(
@@ -492,11 +491,11 @@ processMeter(show, sentiment) =>
              color = color.new(chart.fg_color, 15), style = label.style_circle, size = size.auto, tooltip = str.tostring(sentiment, '#.#')))
 
         meterLabels.push(label.new(index + hOffset + 17 + math.round(radius * math.cos(math.toradians(160))), 
-             base + coefficient * (radius * math.sin(math.toradians(160))), 'Strong\nBearish', 
+             base + coefficient * (radius * math.sin(math.toradians(160))), 'Venta\nFuerte', 
              color = color(na), style = label.style_label_right, textcolor = sentiment <= 20 ? bearColor : #787b86))
 
         meterLabels.push(label.new(index + hOffset + 17 + math.round(radius * math.cos(math.toradians(130))), 
-             base + coefficient * (radius * math.sin(math.toradians(130))), 'Bearish', 
+             base + coefficient * (radius * math.sin(math.toradians(130))), 'Venta', 
              color = color(na), style = label.style_label_lower_right, textcolor = sentiment > 20 and sentiment <= 40 ? bearColor : #787b86))
 
         meterLabels.push(label.new(index + hOffset + 17 + math.round(radius * math.cos(math.toradians( 90))), 
@@ -504,11 +503,11 @@ processMeter(show, sentiment) =>
              color = color(na), style = label.style_label_down, textcolor = sentiment > 40 and sentiment <= 60 ? chart.fg_color : #787b86))
 
         meterLabels.push(label.new(index + hOffset + 17 + math.round(radius * math.cos(math.toradians( 50))), 
-             base + coefficient * (radius * math.sin(math.toradians( 50))), 'Bullish', 
+             base + coefficient * (radius * math.sin(math.toradians( 50))), 'Compra', 
              color = color(na), style = label.style_label_lower_left, textcolor = sentiment > 60 and sentiment <= 80 ? bullColor : #787b86))
 
         meterLabels.push(label.new(index + hOffset + 17 + math.round(radius * math.cos(math.toradians( 20))), 
-             base + coefficient * (radius * math.sin(math.toradians( 20))), 'Strong\nBullish', 
+             base + coefficient * (radius * math.sin(math.toradians( 20))), 'Compra\nFuerte', 
              color = color(na), style = label.style_label_left, textcolor = sentiment > 80 ? bullColor : #787b86))
 
 //---------------------------------------------------------------------------------------------------------------------}
