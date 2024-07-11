@@ -8,7 +8,7 @@
 indicator('Market Sentiment Technicals [@Allen.]', 'Market Sentiment Technicals', true, scale = scale.none)
 
 //// ───────────────────────
-//  ─── Linear ─────────────
+//  ─── MST ─────────────
 //  ─── Colors ─────────────
 
 /// ─── Standard ──
@@ -40,30 +40,30 @@ indicator('Market Sentiment Technicals [@Allen.]', 'Market Sentiment Technicals'
 	// AmeTrGrayStone							= #999999								// AmeritradeGrayStone
 	// AmeTrGrayIron							= #666666								// AmeritradeGrayIron
 	// AmeTrGrayCharcoal						= #333333								// AmeritradeGrayCharcoal
-	//  AmeTrBlack								= #000000								// AmeritradeBlack
-	//  AmeTrGreenCabbage						= #EBF6E9								// AmeritradeGreenCabbage
-	//  AmeTrGreenVerdeLight70					= #B4D6B2								// AmeritradeGreenVerdeLight70
-	//  AmeTrGreenVerdeLight50					= #83BC7F								// AmeritradeGreenVerdeLight50
-	//  AmeTrGreenVerdeNat						= #40a829								// AmeritradeGreenVerdeNat
-	//  AmeTrGreenVerdeLight20					= #399333								// AmeritradeGreenVerdeLight20
-	//  AmeTrGreenVerde							= #087900								// AmeritradeGreenVerde
-	//  AmeTrGreenVerdeDark20					= #066000								// AmeritradeGreenVerdeDark20
-	//  AmeTrGreenMoss							= #BEE7D3								// AmeritradeGreenMoss
-	//  AmeTrGreenMint							= #6DC4BC								// AmeritradeGreenMint
-	//  AmeTrGreenPine							= #38635A								// AmeritradeGreenPine
-	//  AmeTrRedRose							= #FAD1CF								// AmeritradeRedRose
-	//  AmeTrRedRojaLight50						= #E08988								// AmeritradeRedRojaLight50
-	//  AmeTrRedRojaLight20						= #CD4241								// AmeritradeRedRojaLight20
-	//  AmeTrRedRoja							= #C11312								// AmeritradeRedRoja
-	//  AmeTrRedRojaDark20						= #940F0E								// AmeritradeRedRojaDark20
-	//  AmeTrorangePeach						= #FCE7CA								// AmeritradeorangePeach
-	//  AmeTrorangeCarrot						= #ED8902								// AmeritradeorangeCarrot
-	//  AmeTrorangeYam							= #BD5310								// AmeritradeorangeYam
-	//  AmeTrblueFrost							= #E1EEF9								// AmeritradeblueFrost
-	//  AmeTrblueLagoon							= #316486								// AmeritradeblueLagoon
-	//  AmeTrblueNavy							= #2A5673								// AmeritradeblueNavy
-	//  AmeTrblueNcean							= #64A1C6								// AmeritradeblueNcean
-	//  AmeTrpurpleEggPlant						= #732181								// AmeritradepurpleEggPlant
+	// AmeTrBlack								= #000000								// AmeritradeBlack
+	// AmeTrGreenCabbage						= #EBF6E9								// AmeritradeGreenCabbage
+	// AmeTrGreenVerdeLight70					= #B4D6B2								// AmeritradeGreenVerdeLight70
+	// AmeTrGreenVerdeLight50					= #83BC7F								// AmeritradeGreenVerdeLight50
+	// AmeTrGreenVerdeNat						= #40a829								// AmeritradeGreenVerdeNat
+	// AmeTrGreenVerdeLight20					= #399333								// AmeritradeGreenVerdeLight20
+	// AmeTrGreenVerde							= #087900								// AmeritradeGreenVerde
+	// AmeTrGreenVerdeDark20					= #066000								// AmeritradeGreenVerdeDark20
+	// AmeTrGreenMoss							= #BEE7D3								// AmeritradeGreenMoss
+	// AmeTrGreenMint							= #6DC4BC								// AmeritradeGreenMint
+	// AmeTrGreenPine							= #38635A								// AmeritradeGreenPine
+	// AmeTrRedRose								= #FAD1CF								// AmeritradeRedRose
+	// AmeTrRedRojaLight50						= #E08988								// AmeritradeRedRojaLight50
+	// AmeTrRedRojaLight20						= #CD4241								// AmeritradeRedRojaLight20
+	// AmeTrRedRoja								= #C11312								// AmeritradeRedRoja
+	// AmeTrRedRojaDark20						= #940F0E								// AmeritradeRedRojaDark20
+	// AmeTrorangePeach							= #FCE7CA								// AmeritradeorangePeach
+	// AmeTrorangeCarrot						= #ED8902								// AmeritradeorangeCarrot
+	// AmeTrorangeYam							= #BD5310								// AmeritradeorangeYam
+	// AmeTrblueFrost							= #E1EEF9								// AmeritradeblueFrost
+	// AmeTrblueLagoon							= #316486								// AmeritradeblueLagoon
+	// AmeTrblueNavy							= #2A5673								// AmeritradeblueNavy
+	// AmeTrblueNcean							= #64A1C6								// AmeritradeblueNcean
+	// AmeTrpurpleEggPlant						= #732181								// AmeritradepurpleEggPlant
 
 /// ─── Axi ───
 	// AxiPrimary								= #fc404d								// AxiPrimary
