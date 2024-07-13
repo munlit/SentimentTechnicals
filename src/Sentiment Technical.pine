@@ -264,6 +264,8 @@ AllenSky10								= #CCF8FF								// AllenSky10
 	// AllenMint50								= #4fffc0								// AllenMint50
 AllenMint60								= #33ffac								// AllenMint60
 
+AllenWine50										= #e91e63								// AllenWine50
+
 //// ─────────────
 
 //// ───────────────────────
@@ -276,7 +278,7 @@ genericGroup		= 'Generic Settings'
 
 tfTTip				= 'This option is utilized to calculate technical indicators for higher timeframes. If a timeframe lower than the chart\'s timeframe is selected, calculations will be based on the chart\'s timeframe.'
 indi_tf				= input.string			(defval = 'Chart',	title = 'Timeframe',		options = ['Chart', '5 Minutes', '15 Minutes', '1 Hour', '4 Hours', '1 Day', '1 Week', '1 Month'],		group = genericGroup,		display = display,		tooltip = tfTTip)
-hOffset				= input.int				(defval = 17,		title = 'Horizontal Offset',	minval = 10,	maxval = 360,		group = genericGroup,		display = display)
+hOffset				= input.int				(defval = 22,		title = 'Horizontal Offset',	minval = 10,	maxval = 360,		group = genericGroup,		display = display)
 
 bullColor			= input.color			(AllenMint60,		title = 'Gradient Colors: Bullish',					group = genericGroup,		inline = 'CSS')
 bearColor			= input.color			(AllenSky10,		title =	'Bearish', 									group = genericGroup,		inline = 'CSS')
