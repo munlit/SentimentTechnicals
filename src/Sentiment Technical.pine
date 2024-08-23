@@ -7,9 +7,12 @@
 //@version=5
 indicator('Market Sentiment Technicals [@Allen.]', 'Market Sentiment Technicals', true, scale = scale.none)
 
+//// ─────────────────────────────────────────────────────────────────────
+
 //// ───────────────────────
-//  ─── MST ─────────────
-//  ─── Colors ─────────────
+//  ─── Sentiment ───
+/// ─── Colors ──────
+//// ───────────────────────
 
 /// ─── Standard ──
 	// color.aqua								= #00BCD4
@@ -42,28 +45,28 @@ indicator('Market Sentiment Technicals [@Allen.]', 'Market Sentiment Technicals'
 	// AmeTrGrayCharcoal						= #333333								// AmeritradeGrayCharcoal
 	// AmeTrBlack								= #000000								// AmeritradeBlack
 	// AmeTrGreenCabbage						= #EBF6E9								// AmeritradeGreenCabbage
-	// AmeTrGreenVerdeLight70					= #B4D6B2								// AmeritradeGreenVerdeLight70
-	// AmeTrGreenVerdeLight50					= #83BC7F								// AmeritradeGreenVerdeLight50
-	// AmeTrGreenVerdeNat						= #40a829								// AmeritradeGreenVerdeNat
-	// AmeTrGreenVerdeLight20					= #399333								// AmeritradeGreenVerdeLight20
-	// AmeTrGreenVerde							= #087900								// AmeritradeGreenVerde
-	// AmeTrGreenVerdeDark20					= #066000								// AmeritradeGreenVerdeDark20
+	// AmeTrGreenLight70						= #B4D6B2								// AmeritradeGreenLight70
+	// AmeTrGreenLight50						= #83BC7F								// AmeritradeGreenLight50
+	// AmeTrGreenNat							= #40a829								// AmeritradeGreenNat
+	// AmeTrGreenLight20						= #399333								// AmeritradeGreenLight20
+	// AmeTrGreen								= #087900								// AmeritradeGreen
+	// AmeTrGreenDark20							= #066000								// AmeritradeGreenDark20
 	// AmeTrGreenMoss							= #BEE7D3								// AmeritradeGreenMoss
 	// AmeTrGreenMint							= #6DC4BC								// AmeritradeGreenMint
 	// AmeTrGreenPine							= #38635A								// AmeritradeGreenPine
 	// AmeTrRedRose								= #FAD1CF								// AmeritradeRedRose
-	// AmeTrRedRojaLight50						= #E08988								// AmeritradeRedRojaLight50
-	// AmeTrRedRojaLight20						= #CD4241								// AmeritradeRedRojaLight20
-	// AmeTrRedRoja								= #C11312								// AmeritradeRedRoja
-	// AmeTrRedRojaDark20						= #940F0E								// AmeritradeRedRojaDark20
-	// AmeTrorangePeach							= #FCE7CA								// AmeritradeorangePeach
-	// AmeTrorangeCarrot						= #ED8902								// AmeritradeorangeCarrot
-	// AmeTrorangeYam							= #BD5310								// AmeritradeorangeYam
-	// AmeTrblueFrost							= #E1EEF9								// AmeritradeblueFrost
-	// AmeTrblueLagoon							= #316486								// AmeritradeblueLagoon
-	// AmeTrblueNavy							= #2A5673								// AmeritradeblueNavy
-	// AmeTrblueNcean							= #64A1C6								// AmeritradeblueNcean
-	// AmeTrpurpleEggPlant						= #732181								// AmeritradepurpleEggPlant
+	// AmeTrRedLight50							= #E08988								// AmeritradeRedLight50
+	// AmeTrRedLight20							= #CD4241								// AmeritradeRedLight20
+	// AmeTrRed									= #C11312								// AmeritradeRed
+	// AmeTrRedDark20							= #940F0E								// AmeritradeRedDark20
+	// AmeTrOrangePeach							= #FCE7CA								// AmeritradeOrangePeach
+	// AmeTrOrangeCarrot						= #ED8902								// AmeritradeOrangeCarrot
+	// AmeTrOOrangeYam							= #BD5310								// AmeritradeOOrangeYam
+	// AmeTrBlueFrost							= #E1EEF9								// AmeritradeBlueFrost
+	// AmeTrBlueLagoon							= #316486								// AmeritradeBlueLagoon
+	// AmeTrBlueNavy							= #2A5673								// AmeritradeBlueNavy
+	// AmeTrBlueNcean							= #64A1C6								// AmeritradeBlueNcean
+	// AmeTrPurpleEggPlant						= #732181								// AmeritradePurpleEggPlant
 
 /// ─── Axi ───
 	// AxiPrimary								= #fc404d								// AxiPrimary
@@ -208,29 +211,47 @@ indicator('Market Sentiment Technicals [@Allen.]', 'Market Sentiment Technicals'
 	// EEGFucsia50								= #FE0CB6								// EEGFucsia50
 
 /// ─── Bright Line ───
-	// BrLiYel10								= #FBFD73								// BrightLineBackground Yellow Light
+	// BrLiYel10								= #FBFD73								// BrightLine Yellow Light
 	// BrLiYel20								= #FFFD52								// BrightLine Yellow Light
 	// BrLiYel30								= #FDF43C								// BrightLineB Yellow High
 	// BrLiYel40								= #FEF301								// BrightLineBackground Yellow Nit
 	// BrLiYel50								= #FFDB00								// BrightLineBackground Yellow Base
 
-/// ─── TradingView ───
-	// TVLightMenta50							= #00ffd5								// TradingViewMenta
-	// TVLightGreen50					    	= #33ffac								// TradingViewGreenNit
-	// TVBlue50									= #0034c5								// TradingViewBlue
-	// TVLightYellow50							= #eedd45								// TradingViewYellow
-	// TVNitRed40						   		= #e91e63								// TradingViewRedLight
-	// TVLightBlueSky50							= #12cef8								// TradingViewBlueSky
+/// ─── Waves Beh ───
+	// WavBehPink20								= #FFB7FF								// WavBehPink20
+	// WavBehFucsia50							= #DF36DF								// WavBehFucsia50
+	// WavBehNude10								= #FFFDDF								// WavBehNude10
+	// WavBehSky70								= #06B7FE								// WavBehSky70
+	// WavBehAqua50								= #0CF2F2								// WavBehAqua50
 
-/// ─── TFlab ───
-	// TFlAsia			    					= #8bbcfc								// Lite TFlabAsia                        
-	// TFlSydney		    					= #F0B884								// Lite TFlabSydney                      
-	// TFlTokyo									= #0CC1C0								// Lite TFlabTokyo                       
-	// TFlShanghai								= #ea1616								// Lite TFlabShanghai                    
-	// TFlEuro									= #BBE8B5								// Lite TFlabEuro                        
-	// TFlLondon								= #ACBBE8								// Lite TFlabLondon                      
-	// TFlNewyork								= #C5ACE8								// Lite TFlabNewyork                     
-	// TFlNYSE									= #87c2d4								// Lite TFlabNYSE                        
+/// ─── Victoria Secret ───
+	// VictSecPink20							= #EDB3DD								// VictSecPink20
+	// VictSecPink50							= #E651CD								// VictSecPink50
+	// VictSecFucsia50							= #EA1889								// VictSecFucsia50
+	// VictSecWine30							= #C2329F								// VictSecWine30
+	// VictSecWine50							= #7D1250								// VictSecWine50
+	// VictSecWine60							= #7C2558								// VictSecWine60
+
+/// ─── Mongo DB ───
+	// MongoSky10								= #E3FCF7								// MongoDBSky10
+	// MongoYellow50							= #FFE212								// MongoDBYellow50
+	// MongoLime50								= #B1FF05								// MongoDBLime50
+	// MongoGreen50								= #00ED64								// MongoDBGreen50
+	// MongoGreen60								= #13AA52								// MongoDBGreen60
+	// MongoGreen70								= #00684A								// MongoDBGreen70
+	// MongoGreen80								= #014E3D								// MongoDBGreen80
+	// MongoGray50								= #42494F								// MongoDBGray50
+	// MongoGray70								= #001E2B								// MongoDBGray70
+	// MongoBlack50								= #231F20								// MongoDBBlack50
+
+/// ─── Platzi ───
+	// PlatziGreen30							= #ADEB42								// PlatziGreen60
+	// PlatziGreen40							= #85C638								// PlatziGreen60
+	// PlatziGreen50							= #95CA3E								// PlatziGreen50
+	// PlatziGreen60							= #98CA3F								// PlatziGreen40
+	// PlatziBlue70								= #121F3D								// PlatziBlue70
+	// PlatziBlue50								= #24385B								// PlatziBlue50
+	// PlatziDark60								= #0C1633								// PlatziDark60
 
 /// ─── Ultr ───
 	// UltrBlueSky10							= #59F2E9								// UltrBlueSky10
@@ -241,7 +262,8 @@ indicator('Market Sentiment Technicals [@Allen.]', 'Market Sentiment Technicals'
 	// UltrMenta40								= #73FFCA								// UltrMenta40
 	// UltrMenta50								= #9CFFD7								// UtlrMenta50
 	// UltrMenta60								= #4fffc0								// UtlrMenta60
-	// UltrRose20								= #ffa3e3								// UltrRose
+	// UltrGreen50								= #95BD5F								// UltrGreen50
+	// UltrRose40								= #FFA3E3								// UltrRose
 	// UltrFucsia30								= #ff6fd3								// UltrFucsia
 	// UltrLyla									= #7E57C2								// UltrLyla
 	// UltrLightGray							= #787B86								// UltrLightGray
@@ -262,11 +284,14 @@ AllenSky10								= #CCF8FF								// AllenSky10
 	// AllenMint30								= #7FFFD4								// AllenMint30
 	// AllenMint40								= #73FFCA								// AllenMint40
 	// AllenMint50								= #4fffc0								// AllenMint50
-AllenMint60								= #33ffac								// AllenMint60
+AllenMint60								= #33FFAC								// AllenMint60
 
-AllenWine50										= #e91e63								// AllenWine50
+	// AllenFucsia30							= #E06BAA								// AllenFucsia30
+	// AllenFucsia50							= #EA1889
+	// AllenWine50								= #E91E63								// AllenWine50
+	// AllenWine60								= #E8114B								// AllenWine60
 
-//// ─────────────
+//// ─────────────────────────────────────────────────────────────────────
 
 //// ───────────────────────
 // Settings 
@@ -650,7 +675,7 @@ processData(show, timeframe, closeValue, rsiValue, stochValue, stochRSIValue, cc
 				 color(na), bgcolor = color.from_gradient(element, 0, 100, bearColor, bullColor) ))
 
 			tiPanel.tiTitles.push(label.new(
-				 hOffset + bar_index + 3 * index + 1, offset, oscNames.get(index), color = color(na), size = size.tiny, style = label.style_label_up, 
+				 hOffset + bar_index + 3 * index + 1, offset, oscNames.get(index), color = color(na), size = size.small, style = label.style_label_up, 
 				 textcolor = chart.fg_color, tooltip = oscTitles.get(index) + '\n Calculated Score: ' + str.tostring(element, '#.##') ))
 
 
@@ -662,7 +687,7 @@ processData(show, timeframe, closeValue, rsiValue, stochValue, stochRSIValue, cc
 				 color(na), bgcolor = color.from_gradient(element, 0, 100, bearColor, bullColor) ))
 
 			tiPanel.tiTitles.push(label.new(
-				 hOffset + bar_index + 3 + 3 * (oscIndies.size() + index) + 1, offset, trendNames.get(index), color = color(na), size = size.tiny, style = label.style_label_up, 
+				 hOffset + bar_index + 3 + 3 * (oscIndies.size() + index) + 1, offset, trendNames.get(index), color = color(na), size = size.small, style = label.style_label_up, 
 				 textcolor = chart.fg_color, tooltip = trendTitles.get(index) + '\n Calculated Score: ' + str.tostring(element, '#.##') ))
 
 scoreLeft(value) =>
@@ -856,4 +881,4 @@ plotshape(hiddenBearCond ? osc[lbR] : na, 'Hidden Bearish Label', shape.labeldow
 //Plot to fix market sentiment location
 plot(5.25 + panel_Height + panel_Height + .5, color = na, editable = false)
 
-//// ───────────────────────
+//// ─────────────────────────────────────────────────────────────────────
