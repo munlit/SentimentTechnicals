@@ -851,32 +851,32 @@ priceLL = low[lbR] < ta.valuewhen(plFound, low[lbR], 1)
 
 bullCond = mrktOsc_Show and isRegular and priceLL and oscHL and plFound
 
-plot(plFound ? osc[lbR] : na, 'Regular Bullish', bullCond ? bullColor : color(na), 2, offset = -lbR, display = display)
-plotshape(bullCond ? osc[lbR] : na, 'Regular Bullish Label', shape.labelup, location.absolute, color.new(bullColor, 0), -lbR, display = display)
+plot(plFound ? osc[lbR] : na, 'Compra', bullCond ? bullColor : color(na), 2, offset = -lbR, display = display)
+plotshape(bullCond ? osc[lbR] : na, 'Etiqueta de Compra', shape.labelup, location.absolute, color.new(bullColor, 0), -lbR, display = display)
 
 oscLL = osc[lbR] < ta.valuewhen(plFound, osc[lbR], 1) and _inRange(plFound[1])
 priceHL = low[lbR] > ta.valuewhen(plFound, low[lbR], 1)
 
 hiddenBullCond = mrktOsc_Show and isHidden and priceHL and oscLL and plFound
 
-plot(plFound ? osc[lbR] : na, 'Hidden Bullish', hiddenBullCond ? color.new(bullColor, 73) : color(na), 2, offset = -lbR, display = display)
-plotshape(hiddenBullCond ? osc[lbR] : na, 'Hidden Bullish Label', shape.labelup, location.absolute, color.new(bullColor, 73), -lbR, display = display)
+plot(plFound ? osc[lbR] : na, 'Compra scalp', hiddenBullCond ? color.new(bullColor, 73) : color(na), 2, offset = -lbR, display = display)
+plotshape(hiddenBullCond ? osc[lbR] : na, 'Etiqueta de Compra scalp', shape.labelup, location.absolute, color.new(bullColor, 73), -lbR, display = display)
 
 oscLH = osc[lbR] < ta.valuewhen(phFound, osc[lbR], 1) and _inRange(phFound[1])
 priceHH = high[lbR] > ta.valuewhen(phFound, high[lbR], 1)
 
 bearCond = mrktOsc_Show and isRegular and priceHH and oscLH and phFound
 
-plot(phFound ? osc[lbR] : na, 'Regular Bearish', bearCond ? bearColor : color(na), 2, offset = -lbR, display = display)
-plotshape(bearCond ? osc[lbR] : na, 'Regular Bearish Label', shape.labeldown, location.absolute, color.new(bearColor, 0), -lbR, display = display)
+plot(phFound ? osc[lbR] : na, 'Venta', bearCond ? bearColor : color(na), 2, offset = -lbR, display = display)
+plotshape(bearCond ? osc[lbR] : na, 'Etiqueta de Venta', shape.labeldown, location.absolute, color.new(bearColor, 0), -lbR, display = display)
 
 oscHH = osc[lbR] > ta.valuewhen(phFound, osc[lbR], 1) and _inRange(phFound[1])
 priceLH = high[lbR] < ta.valuewhen(phFound, high[lbR], 1)
 
 hiddenBearCond = mrktOsc_Show and isHidden and priceLH and oscHH and phFound
 
-plot(phFound ? osc[lbR] : na, 'Hidden Bearish', hiddenBearCond ? color.new(bearColor, 73) : color(na), 2, offset = -lbR, display = display)
-plotshape(hiddenBearCond ? osc[lbR] : na, 'Hidden Bearish Label', shape.labeldown, location.absolute, color.new(bearColor, 73), -lbR, display = display)
+plot(phFound ? osc[lbR] : na, 'Venta Scalp', hiddenBearCond ? color.new(bearColor, 73) : color(na), 2, offset = -lbR, display = display)
+plotshape(hiddenBearCond ? osc[lbR] : na, 'Etiqueta de Venta scalp', shape.labeldown, location.absolute, color.new(bearColor, 73), -lbR, display = display)
 
 //Plot to fix market sentiment location
 plot(5.25 + panel_Height + panel_Height + .5, color = na, editable = false)
