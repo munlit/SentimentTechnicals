@@ -302,72 +302,72 @@ display				= display.all - display.status_line
 genericGroup		= 'Generic Settings'
 
 tfTTip				= 'This option is utilized to calculate technical indicators for higher timeframes. If a timeframe lower than the chart\'s timeframe is selected, calculations will be based on the chart\'s timeframe.'
-indi_tf				= input.string			(defval = 'Chart',	title = 'Timeframe',		options = ['Chart', '5 Minutes', '15 Minutes', '1 Hour', '4 Hours', '1 Day', '1 Week', '1 Month'],		group = genericGroup,		display = display,		tooltip = tfTTip)
-hOffset				= input.int				(defval = 22,		title = 'Horizontal Offset',	minval = 10,	maxval = 360,		group = genericGroup,		display = display)
+indi_tf				= input.string			(defval = 'Chart',	title = 'Temporalidad',		options = ['Chart', '5 Minutes', '15 Minutes', '1 Hour', '4 Hours', '1 Day', '1 Week', '1 Month'],		group = genericGroup,		display = display,		tooltip = tfTTip)
+hOffset				= input.int				(defval = 22,		title = 'Desplazamiento horizontal',	minval = 10,	maxval = 360,		group = genericGroup,		display = display)
 
-bullColor			= input.color			(AllenMint60,		title = 'Gradient Colors: Bullish',					group = genericGroup,		inline = 'CSS')
+bullColor			= input.color			(AllenMint60,		title = 'Color de gradiente: Compra',					group = genericGroup,		inline = 'CSS')
 bearColor			= input.color			(AllenSky10,		title =	'Bearish', 									group = genericGroup,		inline = 'CSS')
 
 panel_Group			= 'Indicators Sentiment Panel'
 panel_Show			= input.bool			(defval = true,		title = 'Indicators Sentiment Panel',				group = panel_Group)
-panel_Height		= input.int				(defval = 3,		title = '  Panel Height', minval = 2, maxval = 7,	group = panel_Group,		display = display)
+panel_Height		= input.int				(defval = 3,		title = '  Alto de Panel', minval = 2, maxval = 7,	group = panel_Group,		display = display)
 
-mrktMtr_Show		= input.bool			(defval = true,		title = 'Market Sentiment Meter',					group = 'Market Sentiment Meter')
+mrktMtr_Show		= input.bool			(defval = true,		title = 'Medidor de Sentimiento de Mercado',		group = 'Market Sentiment Meter')
 
 mrktOsc_Group		= 'Market Sentiment Oscillator'
-mrktOsc_Show		= input.bool			(defval = true,		title = 'Market Sentiment Oscillator',				group = mrktOsc_Group)
-mrktOsc_Divergence	= input.string			(defval = 'All',	title = "  Show Divergence", options = ['Regular', 'Hidden', 'All', 'None'], group = mrktOsc_Group, display = display)
-mrktOsc_lnWidth		= input.int				(defval = 1,		title = '  Oscillator Line Width', minval = 1,		group = mrktOsc_Group, display = display)
-mrktOsc_height		= input.float			(defval = 3.5,		title = '  Oscillator Height',  minval = 0, step = .5, group = mrktOsc_Group, display = display)
+mrktOsc_Show		= input.bool			(defval = true,		title = 'Oscilador de Sentimiento de Mercado',		group = mrktOsc_Group)
+mrktOsc_Divergence	= input.string			(defval = 'All',	title = "  Mostrar Divergencia", options = ['Regular', 'Hidden', 'All', 'None'], group = mrktOsc_Group, display = display)
+mrktOsc_lnWidth		= input.int				(defval = 1,		title = '  Ancho de línea del oscilador', minval = 1,		group = mrktOsc_Group, display = display)
+mrktOsc_height		= input.float			(defval = 3.5,		title = '  Altura de Oscilador',  minval = 0, step = .5, group = mrktOsc_Group, display = display)
 
 rsi_Group			= 'Relative Strength Index Settings'
-rsi_Source			= input.source			(close,				title = '  Source',									group = rsi_Group,			display = display)
-rsi_Length			= input.int				(defval = 14,		title = '  Length', minval = 1,						group = rsi_Group,			display = display)
+rsi_Source			= input.source			(close,				title = '  Fuente',									group = rsi_Group,			display = display)
+rsi_Length			= input.int				(defval = 14,		title = '  Longitud', minval = 1,					group = rsi_Group,			display = display)
 
 stoch_Group			= 'Stochastic %K Settings'
-stoch_LengthK		= input.int				(defval = 14,		title = '  Stochastic %K Length',	minval = 1,		group = stoch_Group,		display = display)
-stoch_SmoothK		= input.int				(defval = 3,		title = '  %K Smoothing',			minval = 1,		group = stoch_Group,		display = display)
+stoch_LengthK		= input.int				(defval = 14,		title = '  Longitud Stochastic %K',	minval = 1,		group = stoch_Group,		display = display)
+stoch_SmoothK		= input.int				(defval = 3,		title = '  %K Suavizado',			minval = 1,		group = stoch_Group,		display = display)
 
 stochRSI_Group		= 'Stochastic RSI Fast Settings'
-stochRSI_LengthK	= input.int				(defval = 14,		title = '  Stochastic Length',		minval = 1,		group = stochRSI_Group,		display = display)
-stochRSI_SmoothK	= input.int				(defval = 3, 		title = '  %K Smoothing',			minval = 1,		group = stochRSI_Group,		display = display)
-stochRSI_SourceRSI	= input.source			(close,				title = '  RSI Source',								group = stochRSI_Group,		display = display)
-stochRSI_LengthRSI	= input.int				(defval = 14,		title = '  RSI Length',				minval = 1,		group = stochRSI_Group,		display = display)
+stochRSI_LengthK	= input.int				(defval = 14,		title = '  Longitud Stochastic',	minval = 1,		group = stochRSI_Group,		display = display)
+stochRSI_SmoothK	= input.int				(defval = 3, 		title = '  %K Suavizado',			minval = 1,		group = stochRSI_Group,		display = display)
+stochRSI_SourceRSI	= input.source			(close,				title = '  Fuente RSI',								group = stochRSI_Group,		display = display)
+stochRSI_LengthRSI	= input.int				(defval = 14,		title = '  Longitud RSI',			minval = 1,		group = stochRSI_Group,		display = display)
 
 cci_Group			= 'Commodity Channel Index Settings'
-cci_Source			= input.source			(hlc3,				title = '  Source',									group = cci_Group,			display = display)
-cci_Length			= input.int				(defval = 20,		title = '  Length',					minval = 1,		group = cci_Group,			display = display)
+cci_Source			= input.source			(hlc3,				title = '  Fuente',									group = cci_Group,			display = display)
+cci_Length			= input.int				(defval = 20,		title = '  Longitud',				minval = 1,		group = cci_Group,			display = display)
 
 bbp_Group			= 'Bull Bear Power Settings'
-bbp_Length			= input.int				(defval = 13,		title = '  Length',					minval = 1,		group = bbp_Group,			display = display)
+bbp_Length			= input.int				(defval = 13,		title = '  Longitud',				minval = 1,		group = bbp_Group,			display = display)
 
 ma_Group			= 'MA Settings'
-maType				= input.string			("SMA",				title = "  Type", options = ["SMA", "EMA", "HMA", "RMA", "WMA", "VWMA"], group = ma_Group,		display = display)
-maLength			= input.int				(defval = 20,		title = '  Length',					minval = 1,		group = ma_Group,			display = display)
+maType				= input.string			("SMA",				title = "  Tipo MA",				options = ["SMA", "EMA", "HMA", "RMA", "WMA", "VWMA"], group = ma_Group,		display = display)
+maLength			= input.int				(defval = 20,		title = '  Longitud',				minval = 1,		group = ma_Group,			display = display)
 
 vwap_Group			= 'VWAP Settings'
-vwapAnchor			= input.string			('Auto',			title = '  Anchor', options = ['Auto', 'Day', 'Week', 'Month', 'Quarter', 'Year'], group = vwap_Group,		display = display)
+vwapAnchor			= input.string			('Auto',			title = '  Duración', options = ['Auto', 'Day', 'Week', 'Month', 'Quarter', 'Year'], group = vwap_Group,		display = display)
 vwapStDev			= input.float			(2,					title = '  StdDev',					minval = 1,		group = vwap_Group,			display = display)
 
 bb_Group			= 'Bollinger Bands Settings'
-bb_Type				= input.string			("SMA",				title = "  Basis Type", options = ["SMA", "EMA", "HMA", "RMA", "WMA", "VWMA"], group = bb_Group,		display = display)
-bb_Source			= input.source			(close,				title = "  Source",									group = bb_Group,			display = display)
-bb_Length			= input.int				(defval = 20,		title = "  Length",					minval = 1,		group = bb_Group,			display = display)
+bb_Type				= input.string			("SMA",				title = "  Tipo Basico", options = ["SMA", "EMA", "HMA", "RMA", "WMA", "VWMA"], group = bb_Group,		display = display)
+bb_Source			= input.source			(close,				title = "  Fuente BB",								group = bb_Group,			display = display)
+bb_Length			= input.int				(defval = 20,		title = "  Longitud BB",			minval = 1,		group = bb_Group,			display = display)
 bb_Mult				= input.float			(2.0,				title = "  StdDev", minval=0.01, maxval=50,			group = bb_Group,			display = display)
 
 st_Group			= 'Supertrend Settings'
-st_Period			= input.int				(defval = 10,		title = '  ATR Length',				minval=1,		group = st_Group,			display = display)
+st_Period			= input.int				(defval = 10,		title = '  ATR Longitud',			minval=1,		group = st_Group,			display = display)
 st_Factor			= input.float			(3,					title = '  Factor', minval = 2, step = 0.1,			group = st_Group,			display = display)
 
 lr_Group			= 'Linear Regression Settings'
-lr_Source			= input.source			(close,				title = "  Source",									group = lr_Group,			display = display)
-lr_Length			= input.int				(defval = 25,		title = "  Length",					minval = 1,		group = lr_Group,			display = display)
+lr_Source			= input.source			(close,				title = "  Fuente",									group = lr_Group,			display = display)
+lr_Length			= input.int				(defval = 25,		title = "  Longitud",				minval = 1,		group = lr_Group,			display = display)
 
 ms_Group			= 'Market Structure Settings'
-ms_Length			= input.int				(defval = 5,		title = "  Length",					minval = 1,		group = ms_Group,			display = display)
+ms_Length			= input.int				(defval = 5,		title = "  Longitud",				minval = 1,		group = ms_Group,			display = display)
 
 norm_Group			= 'Normalization Settings - Trend Indicators'
-norm_Smooth			= input.int				(defval = 3,		title = '  Smoothing',				minval = 1,		group = norm_Group,			display = display)
+norm_Smooth			= input.int				(defval = 3,		title = '  Suavizado',				minval = 1,		group = norm_Group,			display = display)
 
 //// ───────────────────────
 // User Defined Types
@@ -814,14 +814,14 @@ if barstate.islast
 
 processMeter(mrktMtr_Show and barstate.islast, sentiment)
 
-tiRank = plot(mrktOsc_Show ? mrktOsc_height * sentiment / 100 : na, 'Oscillator', color.from_gradient(mrktOsc_height * sentiment, 0, mrktOsc_height * 100, bearColor, bullColor), mrktOsc_lnWidth, display = display)
+tiRank = plot(mrktOsc_Show ? mrktOsc_height * sentiment / 100 : na, 'Oscilador', color.from_gradient(mrktOsc_height * sentiment, 0, mrktOsc_height * 100, bearColor, bullColor), mrktOsc_lnWidth, display = display)
 
-upperBand = plot(mrktOsc_Show ? mrktOsc_height * .75 : na, 'Overbought Level', color.new(#787b86, 63), display = display)
-midLine   = plot(mrktOsc_Show ? mrktOsc_height *  .5 : na, 'Equilibrium Level', color.new(#787b86, 63), display = display)
-lowerBand = plot(mrktOsc_Show ? mrktOsc_height * .25 : na, 'Oversold Level', color.new(#787b86, 63), display = display)
+upperBand = plot(mrktOsc_Show ? mrktOsc_height * .75 : na, 'Nivel de SobreCompra', color.new(#787b86, 63), display = display)
+midLine   = plot(mrktOsc_Show ? mrktOsc_height *  .5 : na, 'Nivel de Equilibrio', color.new(#787b86, 63), display = display)
+lowerBand = plot(mrktOsc_Show ? mrktOsc_height * .25 : na, 'Nivel de SobreVenta', color.new(#787b86, 63), display = display)
 
-fill(tiRank, midLine, mrktOsc_height *  1, mrktOsc_height * .5, top_color = color.new(bullColor,   0), bottom_color = color.new(bullColor, 100), title = "Bullish Gradient Fill")
-fill(tiRank, midLine, mrktOsc_height * .5, mrktOsc_height *  0, top_color = color.new(bearColor, 100), bottom_color = color.new(bearColor,   0), title = "Bearish Gradient Fill")
+fill(tiRank, midLine, mrktOsc_height *  1, mrktOsc_height * .5, top_color = color.new(bullColor,   0), bottom_color = color.new(bullColor, 100), title = "Gradiente de Compra")
+fill(tiRank, midLine, mrktOsc_height * .5, mrktOsc_height *  0, top_color = color.new(bearColor, 100), bottom_color = color.new(bearColor,   0), title = "Gradiente Venta")
 
 //// ───────────────────────
 //  ─── Calculations - Divergence Indicator (Build-in TradingView Script)
