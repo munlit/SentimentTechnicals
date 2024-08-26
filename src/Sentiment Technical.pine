@@ -10,7 +10,6 @@ indicator('Market Sentiment Technicals [@Allen.]', 'Market Sentiment Technicals'
 //// ─────────────────────────────────────────────────────────────────────
 
 //// ───────────────────────
-//  ─── Sentiment ───
 /// ─── Colors ──────
 //// ───────────────────────
 
@@ -249,7 +248,7 @@ indicator('Market Sentiment Technicals [@Allen.]', 'Market Sentiment Technicals'
 	// PlatziGreen40							= #85C638								// PlatziGreen60
 	// PlatziGreen50							= #95CA3E								// PlatziGreen50
 	// PlatziGreen60							= #98CA3F								// PlatziGreen40
-	// PlatziBlue70								= #121F3D								// PlatziBlue70
+PlatziBlue70							= #121F3D								// PlatziBlue70
 	// PlatziBlue50								= #24385B								// PlatziBlue50
 	// PlatziDark60								= #0C1633								// PlatziDark60
 
@@ -307,7 +306,7 @@ hOffset				= input.int				(defval = 22,		title = 'Desplazamiento horizontal',	mi
 
 bullColor			= input.color			(AllenMint60,		title = 'Color de gradiente: Compra',				group = genericGroup,		inline = 'CSS')
 bearColor			= input.color			(AllenSky10,		title =	'Venta', 									group = genericGroup,		inline = 'CSS')
-sentTecColorText	= input.color			(AllenSky10,		title =	'Texto', 									group = genericGroup,		inline = 'CSS')
+sentTecColorText	= input.color			(PlatziBlue70,		title =	'Texto', 									group = genericGroup,		inline = 'CSS')
 
 panel_Group			= 'Indicators Sentiment Panel'
 panel_Show			= input.bool			(defval = true,		title = 'Panel de Indicatores',						group = panel_Group)
