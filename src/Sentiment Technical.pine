@@ -298,37 +298,37 @@ AllenMint60								= #33FFAC								// AllenMint60
 
 display				= display.all - display.status_line
 
-genericGroup		= 'Generic Settings'
+genericGroup		= 'Configuración General'
 
-tfTTip				= 'This option is utilized to calculate technical indicators for higher timeframes. If a timeframe lower than the chart\'s timeframe is selected, calculations will be based on the chart\'s timeframe.'
-indi_tf				= input.string			(defval = 'Chart',	title = 'Temporalidad',		options = ['Chart', '5 Minutes', '15 Minutes', '1 Hour', '4 Hours', '1 Day', '1 Week', '1 Month'],		group = genericGroup,		display = display,		tooltip = tfTTip)
+tfTTip				= 'Esta opción se utiliza para calcular indicadores técnicos para marcos temporales más altos. Si se selecciona un período de tiempo inferior al período de tiempo del gráfico, los cálculos se basarán en el período de tiempo del gráfico.'
+indi_tf				= input.string			(defval = 'Gráfico',title = 'Temporalidad',		options = ['Gráfico', '5 Minutos', '15 Minutos', '1 Hora', '4 Horas', '1 Dia', '1 Semana', '1 Mes'],		group = genericGroup,		display = display,		tooltip = tfTTip)
 hOffset				= input.int				(defval = 22,		title = 'Desplazamiento horizontal',	minval = 10,	maxval = 360,		group = genericGroup,		display = display)
 
 bullColor			= input.color			(AllenMint60,		title = 'Color de gradiente: Compra',				group = genericGroup,		inline = 'CSS')
 bearColor			= input.color			(AllenSky10,		title =	'Venta', 									group = genericGroup,		inline = 'CSS')
 sentTecColorText	= input.color			(PlatziBlue70,		title =	'Texto', 									group = genericGroup,		inline = 'CSS')
 
-panel_Group			= 'Indicators Sentiment Panel'
+panel_Group			= 'Panel de Indicadores'
 panel_Show			= input.bool			(defval = true,		title = 'Panel de Indicatores',						group = panel_Group)
 panel_Height		= input.int				(defval = 3,		title = '  Alto de Panel', minval = 2, maxval = 7,	group = panel_Group,		display = display)
 
 mrktMtr_Show		= input.bool			(defval = true,		title = 'Medidor de Sentimiento de Mercado',		group = 'Market Sentiment Meter')
 
-mrktOsc_Group		= 'Market Sentiment Oscillator'
+mrktOsc_Group		= 'Oscilador de Sentimiento de Mercado'
 mrktOsc_Show		= input.bool			(defval = true,		title = 'Oscilador de Sentimiento de Mercado',				group = mrktOsc_Group)
-mrktOsc_Divergence	= input.string			(defval = 'All',	title = "  Mostrar Divergencia", options = ['Regular', 'Hidden', 'All', 'None'],	group = mrktOsc_Group, display = display)
+mrktOsc_Divergence	= input.string			(defval = 'Todas',	title = "  Mostrar Divergencia", options = ['Usuales', 'Ocultas', 'Todas', 'Ninguna'],	group = mrktOsc_Group, display = display)
 mrktOsc_lnWidth		= input.int				(defval = 1,		title = '  Ancho de línea del oscilador', minval = 1,		group = mrktOsc_Group,	display = display)
 mrktOsc_height		= input.float			(defval = 3.5,		title = '  Altura de Oscilador',  minval = 0, step = .5,	group = mrktOsc_Group,	display = display)
 
-rsi_Group			= 'Relative Strength Index Settings'
+rsi_Group			= 'Configuración RSI'
 rsi_Source			= input.source			(close,				title = '  Fuente',									group = rsi_Group,			display = display)
 rsi_Length			= input.int				(defval = 14,		title = '  Longitud', minval = 1,					group = rsi_Group,			display = display)
 
-stoch_Group			= 'Stochastic %K Settings'
+stoch_Group			= 'Configuración Stochastic %K'
 stoch_LengthK		= input.int				(defval = 14,		title = '  Longitud Stochastic %K',	minval = 1,		group = stoch_Group,		display = display)
 stoch_SmoothK		= input.int				(defval = 3,		title = '  %K Suavizado',			minval = 1,		group = stoch_Group,		display = display)
 
-stochRSI_Group		= 'Stochastic RSI Fast Settings'
+stochRSI_Group		= 'Configuración Stochastic RSI Rápido'
 stochRSI_LengthK	= input.int				(defval = 14,		title = '  Longitud Stochastic',	minval = 1,		group = stochRSI_Group,		display = display)
 stochRSI_SmoothK	= input.int				(defval = 3, 		title = '  %K Suavizado',			minval = 1,		group = stochRSI_Group,		display = display)
 stochRSI_SourceRSI	= input.source			(close,				title = '  Fuente RSI',								group = stochRSI_Group,		display = display)
@@ -338,35 +338,35 @@ cci_Group			= 'Commodity Channel Index Settings'
 cci_Source			= input.source			(hlc3,				title = '  Fuente',									group = cci_Group,			display = display)
 cci_Length			= input.int				(defval = 20,		title = '  Longitud',				minval = 1,		group = cci_Group,			display = display)
 
-bbp_Group			= 'Bull Bear Power Settings'
+bbp_Group			= 'Configuración Fuerza de Compra/Venta'
 bbp_Length			= input.int				(defval = 13,		title = '  Longitud',				minval = 1,		group = bbp_Group,			display = display)
 
-ma_Group			= 'MA Settings'
+ma_Group			= 'Configuración Medias Moviles'
 maType				= input.string			("SMA",				title = "  Tipo MA",				options = ["SMA", "EMA", "HMA", "RMA", "WMA", "VWMA"], group = ma_Group,		display = display)
 maLength			= input.int				(defval = 20,		title = '  Longitud',				minval = 1,		group = ma_Group,			display = display)
 
-vwap_Group			= 'VWAP Settings'
-vwapAnchor			= input.string			('Auto',			title = '  Duración',				options = ['Auto', 'Day', 'Week', 'Month', 'Quarter', 'Year'], group = vwap_Group,		display = display)
+vwap_Group			= 'Configuración VWAP'
+vwapAnchor			= input.string			('Auto',			title = '  Duración',				options = ['Auto', 'Dia', 'Semana', 'Mes', 'Cuarto', 'Año'], group = vwap_Group,		display = display)
 vwapStDev			= input.float			(2,					title = '  StdDev',					minval = 1,		group = vwap_Group,			display = display)
 
-bb_Group			= 'Bollinger Bands Settings'
+bb_Group			= 'Configuración Bandas de Bollinger'
 bb_Type				= input.string			("SMA",				title = "  Tipo Basico",			options = ["SMA", "EMA", "HMA", "RMA", "WMA", "VWMA"], group = bb_Group,		display = display)
 bb_Source			= input.source			(close,				title = "  Fuente BB",								group = bb_Group,			display = display)
 bb_Length			= input.int				(defval = 20,		title = "  Longitud BB",			minval = 1,		group = bb_Group,			display = display)
 bb_Mult				= input.float			(2.0,				title = "  StdDev",		minval=0.01, maxval=50,		group = bb_Group,			display = display)
 
-st_Group			= 'Supertrend Settings'
+st_Group			= 'Configuración Supertrend'
 st_Period			= input.int				(defval = 10,		title = '  Longitud ATR',			minval=1,		group = st_Group,			display = display)
 st_Factor			= input.float			(3,					title = '  Factor',					minval = 2, step = 0.1,	group = st_Group,	display = display)
 
-lr_Group			= 'Linear Regression Settings'
+lr_Group			= 'Configuración Regresión Lineal'
 lr_Source			= input.source			(close,				title = "  Fuente",									group = lr_Group,			display = display)
 lr_Length			= input.int				(defval = 25,		title = "  Longitud",				minval = 1,		group = lr_Group,			display = display)
 
-ms_Group			= 'Market Structure Settings'
+ms_Group			= 'Configuración Estructura de Mercado'
 ms_Length			= input.int				(defval = 5,		title = "  Longitud",				minval = 1,		group = ms_Group,			display = display)
 
-norm_Group			= 'Normalization Settings - Trend Indicators'
+norm_Group			= 'Configuración de normalización - Indicadores de tendencia'
 norm_Smooth			= input.int				(defval = 3,		title = '  Suavizado',				minval = 1,		group = norm_Group,			display = display)
 
 //// ───────────────────────
@@ -393,13 +393,13 @@ timeframe(timeframe) =>
 	float chartTFinM = timeframe.in_seconds() / 60
 
 	switch 
-		timeframe == "5 Minutes"  and chartTFinM <= 5   => '5'
-		timeframe == "15 Minutes" and chartTFinM <= 15  => '15'
-		timeframe == "1 Hour"     and chartTFinM <= 60  => '60'
-		timeframe == "4 Hours"    and chartTFinM <= 240 => '240'
-		timeframe == "1 Day"      and timeframe.isintraday => 'D'
-		timeframe == "1 Week"     and (timeframe.isdaily or timeframe.isintraday) => 'W'
-		timeframe == "1 Month"    and (timeframe.isweekly or timeframe.isdaily or timeframe.isintraday) => 'M'
+		timeframe == "5 Minutos"  and chartTFinM <= 5   => '5'
+		timeframe == "15 Minutos" and chartTFinM <= 15  => '15'
+		timeframe == "1 Hora"     and chartTFinM <= 60  => '60'
+		timeframe == "4 Horas"    and chartTFinM <= 240 => '240'
+		timeframe == "1 Dia"      and timeframe.isintraday => 'D'
+		timeframe == "1 Semana"   and (timeframe.isdaily or timeframe.isintraday) => 'W'
+		timeframe == "1 Mes"      and (timeframe.isweekly or timeframe.isdaily or timeframe.isintraday) => 'M'
 		=> timeframe.period
 
 timeframeText(timeframe) =>
@@ -424,15 +424,15 @@ autoAnchor(anchor) =>
 			'3M'
 		else if timeframe.ismonthly
 			'12M'
-	else if anchor == 'Day'
+	else if anchor == 'Dia'
 		'D'
-	else if anchor == 'Week'
+	else if anchor == 'Semana'
 		'W'
-	else if anchor == 'Month'
+	else if anchor == 'Mes'
 		'M'
-	else if anchor == 'Quarter'
+	else if anchor == 'Cuarto'
 		'3M'
-	else if anchor == 'Year'
+	else if anchor == 'Año'
 		'12M'
 
 syminfo(symbol) =>
@@ -828,9 +828,9 @@ fill(tiRank, midLine, mrktOsc_height * .5, mrktOsc_height *  0, top_color = colo
 //// ───────────────────────
 
 [isRegular, isHidden] = switch mrktOsc_Divergence
-	'All' => [true, true]
-	'Regular' => [true, false]
-	'Hidden' => [false, true]
+	'Todas'		=> [true, true]
+	'Usuales'	=> [true, false]
+	'Ocultas'	=> [false, true]
 	=> [false, false]
 
 osc = mrktOsc_height * sentiment / 100
