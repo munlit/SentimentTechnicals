@@ -859,8 +859,8 @@ priceHL = low[lbR] > ta.valuewhen(plFound, low[lbR], 1)
 
 hiddenBullCond = mrktOsc_Show and isHidden and priceHL and oscLL and plFound
 
-plot(plFound ? osc[lbR] : na, 'Compra scalp', hiddenBullCond ? color.new(bullColor, 85) : color(na), 2, offset = -lbR, display = display)
-plotshape(hiddenBullCond ? osc[lbR] : na, 'Etiqueta de Compra scalp', shape.labelup, location.absolute, color.new(bullColor, 85), -lbR, text = ' Compra Fast ', textcolor = sentTecColorText, display = display)
+plot(plFound ? osc[lbR] : na, 'Compra scalp', hiddenBullCond ? color.new(bullColor, 43) : color(na), 2, offset = -lbR, display = display)
+plotshape(hiddenBullCond ? osc[lbR] : na, 'Etiqueta de Compra scalp', shape.labelup, location.absolute, color.new(bullColor, 43), -lbR, text = ' Compra Fast ', textcolor = sentTecColorText, display = display)
 
 oscLH = osc[lbR] < ta.valuewhen(phFound, osc[lbR], 1) and _inRange(phFound[1])
 priceHH = high[lbR] > ta.valuewhen(phFound, high[lbR], 1)
@@ -875,8 +875,8 @@ priceLH = high[lbR] < ta.valuewhen(phFound, high[lbR], 1)
 
 hiddenBearCond = mrktOsc_Show and isHidden and priceLH and oscHH and phFound
 
-plot(phFound ? osc[lbR] : na, 'Venta Scalp', hiddenBearCond ? color.new(bearColor, 85) : color(na), 2, offset = -lbR, display = display)
-plotshape(hiddenBearCond ? osc[lbR] : na, 'Etiqueta de Venta scalp', shape.labeldown, location.absolute, color.new(bearColor, 85), -lbR, text = ' Venta Fast ', textcolor = sentTecColorText, display = display)
+plot(phFound ? osc[lbR] : na, 'Venta Scalp', hiddenBearCond ? color.new(bearColor, 43) : color(na), 2, offset = -lbR, display = display)
+plotshape(hiddenBearCond ? osc[lbR] : na, 'Etiqueta de Venta scalp', shape.labeldown, location.absolute, color.new(bearColor, 43), -lbR, text = ' Venta Fast ', textcolor = sentTecColorText, display = display)
 
 //Plot to fix market sentiment location
 plot(5.25 + panel_Height + panel_Height + .5, color = na, editable = false)
