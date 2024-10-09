@@ -312,7 +312,7 @@ hOffset				= input.int				(defval = 22,		title = 'Desplazamiento horizontal',	mi
 
 bullColor			= input.color			(MstColorBuy,		title = 'Paleta: Compra',							group = genericGroup,		inline = 'CSS')
 bearColor			= input.color			(MstColorSell,		title =	'Venta', 									group = genericGroup,		inline = 'CSS')
-sentTecColorText	= input.color			(MstColorText,		title =	'Texto', 									group = genericGroup,		inline = 'CSS')
+MstMessageColorText	= input.color			(MstColorText,		title =	'Texto', 									group = genericGroup,		inline = 'CSS')
 
 panel_Group			= 'Panel de Indicadores'
 panel_Show			= input.bool			(defval = true,		title = 'Panel de Indicatores',						group = panel_Group)
@@ -617,7 +617,7 @@ processData(show, timeframe, closeValue, rsiValue, stochValue, stochRSIValue, cc
 		tiPanel.tiTitles.push(label.new(
 			 hOffset + bar_index + int((3 * (pSize + 1) - 1) / 2), size + offset + .5, 
 			 syminfo(syminfo.tickerid) + ' (' + str.tostring(closeValue) + ') · ' + timeframeText(timeframe), 
-			 color = color(na), style = label.style_label_down, textcolor = chart.fg_color))
+			 color = color(na), style = label.style_label_down, textcolor = MstColorBuy, size = size.large))
 
 		tiPanel.tiTitles.push(label.new(
 			 hOffset + bar_index, interpolate(75, 100, 0, size, 0) + offset, 'Sobre Compra', 
@@ -682,7 +682,7 @@ processData(show, timeframe, closeValue, rsiValue, stochValue, stochRSIValue, cc
 
 			tiPanel.tiTitles.push(label.new(
 				 hOffset + bar_index + 3 * index + 1, offset, oscNames.get(index), color = color(na), size = size.small, style = label.style_label_up, 
-				 textcolor = chart.fg_color, tooltip = oscTitles.get(index) + '\n Calculated Score: ' + str.tostring(element, '#.##') ))
+				 textcolor = MstColorHidden, tooltip = oscTitles.get(index) + '\n Calculated Score: ' + str.tostring(element, '#.##') ))
 
 
 		for [index, element] in trendIndies
@@ -694,7 +694,7 @@ processData(show, timeframe, closeValue, rsiValue, stochValue, stochRSIValue, cc
 
 			tiPanel.tiTitles.push(label.new(
 				 hOffset + bar_index + 3 + 3 * (oscIndies.size() + index) + 1, offset, trendNames.get(index), color = color(na), size = size.small, style = label.style_label_up, 
-				 textcolor = chart.fg_color, tooltip = trendTitles.get(index) + '\n Calculated Score: ' + str.tostring(element, '#.##') ))
+				 textcolor = MstColorHidden, tooltip = trendTitles.get(index) + '\n Calculated Score: ' + str.tostring(element, '#.##') ))
 
 scoreLeft(value) =>
 	switch
@@ -771,7 +771,7 @@ processMeter(show, sentiment) =>
 					 index - segment + radius + hOffset + 18, base + coefficient * math.sqrt(math.pow(radius, 2) - math.pow(radius - segment + 1, 2)), 
 					 xloc.bar_index, extend.none, color.from_gradient(2 * radius - segment - 1, 0, 26, bearColor, bullColor), line.style_solid, 5))
 
-		polyline.new(circulus, false, false, line_color =  color.new(chart.fg_color, 73), line_width = 5)
+		polyline.new(circulus, false, false, line_color =  color.new(MstColorHidden, 73), line_width = 5)
 
 		meterLines.push(line.new(
 			 index + hOffset + 17, base + coefficient,  
@@ -822,9 +822,9 @@ processMeter(mrktMtr_Show and barstate.islast, sentiment)
 
 tiRank = plot(mrktOsc_Show ? mrktOsc_height * sentiment / 100 : na, 'Oscilador', color.from_gradient(mrktOsc_height * sentiment, 0, mrktOsc_height * 100, bearColor, bullColor), mrktOsc_lnWidth, display = display)
 
-upperBand = plot(mrktOsc_Show ? mrktOsc_height * .75 : na, 'Nivel de SobreCompra', color.new(MstColorLines, 63), display = display)
-midLine   = plot(mrktOsc_Show ? mrktOsc_height *  .5 : na, 'Nivel de Equilibrio', color.new(MstColorLines, 63), display = display)
-lowerBand = plot(mrktOsc_Show ? mrktOsc_height * .25 : na, 'Nivel de SobreVenta', color.new(MstColorLines, 63), display = display)
+upperBand = plot(mrktOsc_Show ? mrktOsc_height * .75 : na, 'Nivel de SobreCompra', color.new(MstColorLines, 40), display = display)
+midLine   = plot(mrktOsc_Show ? mrktOsc_height *  .5 : na, 'Nivel de Equilibrio', color.new(MstColorHidden, 20), display = display)
+lowerBand = plot(mrktOsc_Show ? mrktOsc_height * .25 : na, 'Nivel de SobreVenta', color.new(MstColorLines, 40), display = display)
 
 fill(tiRank, midLine, mrktOsc_height *  1, mrktOsc_height * .5, top_color = color.new(bullColor,   0), bottom_color = color.new(bullColor, 100), title = "Gradiente de Compra")
 fill(tiRank, midLine, mrktOsc_height * .5, mrktOsc_height *  0, top_color = color.new(bearColor, 100), bottom_color = color.new(bearColor,   0), title = "Gradiente Venta")
@@ -858,15 +858,15 @@ priceLL = low[lbR] < ta.valuewhen(plFound, low[lbR], 1)
 bullCond = mrktOsc_Show and isRegular and priceLL and oscHL and plFound
 
 plot(plFound ? osc[lbR] : na, 'Compra', bullCond ? bullColor : color(na), 2, offset = -lbR, display = display)
-plotshape(bullCond ? osc[lbR] : na, 'Etiqueta de Compra', shape.labelup, location.absolute, color.new(bullColor, 0), -lbR, text = ' Compra ', textcolor = sentTecColorText, display = display)
+plotshape(bullCond ? osc[lbR] : na, 'Etiqueta de Compra', shape.labelup, location.absolute, color.new(bullColor, 0), -lbR, text = ' Compra ', textcolor = MstMessageColorText, display = display)
 
 oscLL = osc[lbR] < ta.valuewhen(plFound, osc[lbR], 1) and _inRange(plFound[1])
 priceHL = low[lbR] > ta.valuewhen(plFound, low[lbR], 1)
 
 hiddenBullCond = mrktOsc_Show and isHidden and priceHL and oscLL and plFound
 
-plot(plFound ? osc[lbR] : na, 'Compra scalp', hiddenBullCond ? color.new(bullColor, 43) : color(na), 2, offset = -lbR, display = display)
-plotshape(hiddenBullCond ? osc[lbR] : na, 'Etiqueta de Compra scalp', shape.labelup, location.absolute, color.new(bullColor, 43), -lbR, text = ' Compra Fast ', textcolor = sentTecColorText, display = display)
+plot(plFound ? osc[lbR] : na, 'Compra scalp', hiddenBullCond ? color.new(bullColor, 55) : color(na), 2, offset = -lbR, display = display)
+plotshape(hiddenBullCond ? osc[lbR] : na, 'Etiqueta de Compra scalp', shape.labelup, location.absolute, color.new(bullColor, 40), -lbR, text = ' Trend ▲ ', textcolor = MstMessageColorText, display = display)
 
 oscLH = osc[lbR] < ta.valuewhen(phFound, osc[lbR], 1) and _inRange(phFound[1])
 priceHH = high[lbR] > ta.valuewhen(phFound, high[lbR], 1)
@@ -874,15 +874,15 @@ priceHH = high[lbR] > ta.valuewhen(phFound, high[lbR], 1)
 bearCond = mrktOsc_Show and isRegular and priceHH and oscLH and phFound
 
 plot(phFound ? osc[lbR] : na, 'Venta', bearCond ? bearColor : color(na), 2, offset = -lbR, display = display)
-plotshape(bearCond ? osc[lbR] : na, 'Etiqueta de Venta', shape.labeldown, location.absolute, color.new(bearColor, 0), -lbR, text = ' Venta ', textcolor = sentTecColorText, display = display)
+plotshape(bearCond ? osc[lbR] : na, 'Etiqueta de Venta', shape.labeldown, location.absolute, color.new(bearColor, 0), -lbR, text = ' Venta ', textcolor = MstMessageColorText, display = display)
 
 oscHH = osc[lbR] > ta.valuewhen(phFound, osc[lbR], 1) and _inRange(phFound[1])
 priceLH = high[lbR] < ta.valuewhen(phFound, high[lbR], 1)
 
 hiddenBearCond = mrktOsc_Show and isHidden and priceLH and oscHH and phFound
 
-plot(phFound ? osc[lbR] : na, 'Venta Scalp', hiddenBearCond ? color.new(bearColor, 43) : color(na), 2, offset = -lbR, display = display)
-plotshape(hiddenBearCond ? osc[lbR] : na, 'Etiqueta de Venta scalp', shape.labeldown, location.absolute, color.new(bearColor, 43), -lbR, text = ' Venta Fast ', textcolor = sentTecColorText, display = display)
+plot(phFound ? osc[lbR] : na, 'Venta Scalp', hiddenBearCond ? color.new(bearColor, 55) : color(na), 2, offset = -lbR, display = display)
+plotshape(hiddenBearCond ? osc[lbR] : na, 'Etiqueta de Venta scalp', shape.labeldown, location.absolute, color.new(bearColor, 40), -lbR, text = ' Trend ▼ ', textcolor = MstMessageColorText, display = display)
 
 //Plot to fix market sentiment location
 plot(5.25 + panel_Height + panel_Height + .5, color = na, editable = false)
