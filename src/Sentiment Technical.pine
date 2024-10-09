@@ -28,7 +28,7 @@ indicator('Market Sentiment Technicals [@Allen.]', 'Market Sentiment Technicals'
 	// color.purple								= #9C27B0
 	// color.navy								= #311B92
 	// color.black								= #363A45
-	// color.gray								= #787B86
+	// color.gray								= MstColorHidden
 	// color.silver								= #B2B5BE
 	// color.white								= #FFFFFF
 
@@ -62,7 +62,7 @@ indicator('Market Sentiment Technicals [@Allen.]', 'Market Sentiment Technicals'
 	// AmeTrOrangeCarrot						= #ED8902								// AmeritradeOrangeCarrot
 	// AmeTrOOrangeYam							= #BD5310								// AmeritradeOOrangeYam
 	// AmeTrBlueFrost							= #E1EEF9								// AmeritradeBlueFrost
-	// AmeTrBlueLagoon							= #316486								// AmeritradeBlueLagoon
+AmeTrBlueLagoon							= #316486								// AmeritradeBlueLagoon
 	// AmeTrBlueNavy							= #2A5673								// AmeritradeBlueNavy
 	// AmeTrBlueNcean							= #64A1C6								// AmeritradeBlueNcean
 	// AmeTrPurpleEggPlant						= #732181								// AmeritradePurpleEggPlant
@@ -210,7 +210,7 @@ indicator('Market Sentiment Technicals [@Allen.]', 'Market Sentiment Technicals'
 	// EEGFucsia50								= #FE0CB6								// EEGFucsia50
 
 /// ─── Bright Line ───
-	// BrLiYel10								= #FBFD73								// BrightLine Yellow Light
+BrLiYel10								= #FBFD73								// BrightLine Yellow Light
 	// BrLiYel20								= #FFFD52								// BrightLine Yellow Light
 	// BrLiYel30								= #FDF43C								// BrightLineB Yellow High
 	// BrLiYel40								= #FEF301								// BrightLineBackground Yellow Nit
@@ -292,6 +292,12 @@ AllenMint60								= #33FFAC								// AllenMint60
 
 //// ─────────────────────────────────────────────────────────────────────
 
+MstColorBuy								= AllenMint60
+MstColorSell							= AllenSky10
+MstColorLines							= BrLiYel10
+MstColorText							= PlatziBlue70
+MstColorHidden							= AmeTrBlueLagoon
+
 //// ───────────────────────
 // Settings 
 //// ───────────────────────
@@ -304,9 +310,9 @@ tfTTip				= 'Esta opción se utiliza para calcular indicadores técnicos para ma
 indi_tf				= input.string			(defval = 'Gráfico',title = 'Temporalidad',		options = ['Gráfico', '5 Minutos', '15 Minutos', '1 Hora', '4 Horas', '1 Dia', '1 Semana', '1 Mes'],		group = genericGroup,		display = display,		tooltip = tfTTip)
 hOffset				= input.int				(defval = 22,		title = 'Desplazamiento horizontal',	minval = 10,	maxval = 360,		group = genericGroup,		display = display)
 
-bullColor			= input.color			(AllenMint60,		title = 'Paleta: Compra',							group = genericGroup,		inline = 'CSS')
-bearColor			= input.color			(AllenSky10,		title =	'Venta', 									group = genericGroup,		inline = 'CSS')
-sentTecColorText	= input.color			(PlatziBlue70,		title =	'Texto', 									group = genericGroup,		inline = 'CSS')
+bullColor			= input.color			(MstColorBuy,		title = 'Paleta: Compra',							group = genericGroup,		inline = 'CSS')
+bearColor			= input.color			(MstColorSell,		title =	'Venta', 									group = genericGroup,		inline = 'CSS')
+sentTecColorText	= input.color			(MstColorText,		title =	'Texto', 									group = genericGroup,		inline = 'CSS')
 
 panel_Group			= 'Panel de Indicadores'
 panel_Show			= input.bool			(defval = true,		title = 'Panel de Indicatores',						group = panel_Group)
@@ -619,7 +625,7 @@ processData(show, timeframe, closeValue, rsiValue, stochValue, stochRSIValue, cc
 
 		tiPanel.tiTitles.push(label.new(
 			 hOffset + bar_index, interpolate(50, 100, 0, size, 0) + offset, 'Neutral', 
-			 color = color(na), style = label.style_label_right, textcolor = #787b86))
+			 color = color(na), style = label.style_label_right, textcolor = MstColorHidden))
 
 		tiPanel.tiTitles.push(label.new(
 			 hOffset + bar_index, interpolate(25, 100, 0, size, 0) + offset, 'Sobre Venta', 
@@ -631,7 +637,7 @@ processData(show, timeframe, closeValue, rsiValue, stochValue, stochRSIValue, cc
 
 		tiPanel.tiTitles.push(label.new(
 			 hOffset + bar_index + 3 * (pSize + 1), interpolate(50, 100, 0, size, 0) + offset, 'Neutral', 
-			 color = color(na), style = label.style_label_left, textcolor = #787b86))
+			 color = color(na), style = label.style_label_left, textcolor = MstColorHidden))
 
 		tiPanel.tiTitles.push(label.new(
 			 hOffset + bar_index + 3 * (pSize + 1), interpolate(25, 100, 0, size, 0) + offset, 'Tendencia de Venta Fuerte', 
@@ -645,7 +651,7 @@ processData(show, timeframe, closeValue, rsiValue, stochValue, stochRSIValue, cc
 		tiPanel.tiValues.push(box.new(
 			 hOffset + bar_index - 1 , offset + interpolate(50, 100, 0, size, 0), 
 			 hOffset + bar_index + 3 * (pSize + 1), offset + interpolate(50, 100, 0, size, 0),
-			 color.new(#787b86, 50), bgcolor = #787b86 ))
+			 color.new(MstColorHidden, 50), bgcolor = MstColorHidden ))
 
 		tiPanel.tiValues.push(box.new(
 			 hOffset + bar_index - 1 , offset + interpolate(25, 100, 0, size, 0), 
@@ -655,7 +661,7 @@ processData(show, timeframe, closeValue, rsiValue, stochValue, stochRSIValue, cc
 		tiPanel.tiValues.push(box.new(
 			 hOffset + bar_index                      , offset + size + .50, 
 			 hOffset + bar_index + 3 * (pSize + 1) - 1, offset + size + .25,
-			 color.new(#787b86, 73), bgcolor = color.new(#787b86, 83) ))
+			 color.new(MstColorHidden, 73), bgcolor = color.new(MstColorHidden, 83) ))
 
 		tiPanel.tiValues.push(box.new(
 			 hOffset + bar_index, offset + size + .50, 
@@ -665,7 +671,7 @@ processData(show, timeframe, closeValue, rsiValue, stochValue, stochRSIValue, cc
 		tiPanel.tiValues.push(box.new(
 			 hOffset + bar_index + 3 + 3 * (oscIndies.size()) - 2, offset + size * .85, 
 			 hOffset + bar_index + 3 + 3 * (oscIndies.size()) - 2, offset + size * -.2,
-			 color.new(#787b86, 75), bgcolor = color(na) ))
+			 color.new(MstColorHidden, 75), bgcolor = color(na) ))
 
 		for [index, element] in oscIndies
 
@@ -782,23 +788,23 @@ processMeter(show, sentiment) =>
 
 		meterLabels.push(label.new(index + hOffset + 17 + math.round(radius * math.cos(math.toradians(160))), 
 			 base + coefficient * (radius * math.sin(math.toradians(160))), 'Venta\nFuerte', 
-			 color = color(na), style = label.style_label_right, textcolor = sentiment <= 20 ? bearColor : #787b86))
+			 color = color(na), style = label.style_label_right, textcolor = sentiment <= 20 ? bearColor : MstColorHidden))
 
 		meterLabels.push(label.new(index + hOffset + 17 + math.round(radius * math.cos(math.toradians(130))), 
 			 base + coefficient * (radius * math.sin(math.toradians(130))), 'Venta', 
-			 color = color(na), style = label.style_label_lower_right, textcolor = sentiment > 20 and sentiment <= 40 ? bearColor : #787b86))
+			 color = color(na), style = label.style_label_lower_right, textcolor = sentiment > 20 and sentiment <= 40 ? bearColor : MstColorHidden))
 
 		meterLabels.push(label.new(index + hOffset + 17 + math.round(radius * math.cos(math.toradians( 90))), 
 			 base + coefficient * (radius * math.sin(math.toradians( 90))), 'Neutral', 
-			 color = color(na), style = label.style_label_down, textcolor = sentiment > 40 and sentiment <= 60 ? chart.fg_color : #787b86))
+			 color = color(na), style = label.style_label_down, textcolor = sentiment > 40 and sentiment <= 60 ? chart.fg_color : MstColorHidden))
 
 		meterLabels.push(label.new(index + hOffset + 17 + math.round(radius * math.cos(math.toradians( 50))), 
 			 base + coefficient * (radius * math.sin(math.toradians( 50))), 'Compra', 
-			 color = color(na), style = label.style_label_lower_left, textcolor = sentiment > 60 and sentiment <= 80 ? bullColor : #787b86))
+			 color = color(na), style = label.style_label_lower_left, textcolor = sentiment > 60 and sentiment <= 80 ? bullColor : MstColorHidden))
 
 		meterLabels.push(label.new(index + hOffset + 17 + math.round(radius * math.cos(math.toradians( 20))), 
 			 base + coefficient * (radius * math.sin(math.toradians( 20))), 'Compra\nFuerte', 
-			 color = color(na), style = label.style_label_left, textcolor = sentiment > 80 ? bullColor : #787b86))
+			 color = color(na), style = label.style_label_left, textcolor = sentiment > 80 ? bullColor : MstColorHidden))
 
 //// ───────────────────────
 //  ─── Calculations
@@ -816,9 +822,9 @@ processMeter(mrktMtr_Show and barstate.islast, sentiment)
 
 tiRank = plot(mrktOsc_Show ? mrktOsc_height * sentiment / 100 : na, 'Oscilador', color.from_gradient(mrktOsc_height * sentiment, 0, mrktOsc_height * 100, bearColor, bullColor), mrktOsc_lnWidth, display = display)
 
-upperBand = plot(mrktOsc_Show ? mrktOsc_height * .75 : na, 'Nivel de SobreCompra', color.new(#787b86, 63), display = display)
-midLine   = plot(mrktOsc_Show ? mrktOsc_height *  .5 : na, 'Nivel de Equilibrio', color.new(#787b86, 63), display = display)
-lowerBand = plot(mrktOsc_Show ? mrktOsc_height * .25 : na, 'Nivel de SobreVenta', color.new(#787b86, 63), display = display)
+upperBand = plot(mrktOsc_Show ? mrktOsc_height * .75 : na, 'Nivel de SobreCompra', color.new(MstColorLines, 63), display = display)
+midLine   = plot(mrktOsc_Show ? mrktOsc_height *  .5 : na, 'Nivel de Equilibrio', color.new(MstColorLines, 63), display = display)
+lowerBand = plot(mrktOsc_Show ? mrktOsc_height * .25 : na, 'Nivel de SobreVenta', color.new(MstColorLines, 63), display = display)
 
 fill(tiRank, midLine, mrktOsc_height *  1, mrktOsc_height * .5, top_color = color.new(bullColor,   0), bottom_color = color.new(bullColor, 100), title = "Gradiente de Compra")
 fill(tiRank, midLine, mrktOsc_height * .5, mrktOsc_height *  0, top_color = color.new(bearColor, 100), bottom_color = color.new(bearColor,   0), title = "Gradiente Venta")
