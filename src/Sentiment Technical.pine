@@ -307,7 +307,7 @@ display				= display.all - display.status_line
 genericGroup		= 'Configuración General'
 
 tfTTip				= 'Esta opción se utiliza para calcular indicadores técnicos para marcos temporales más altos. Si se selecciona un período de tiempo inferior al período de tiempo del gráfico, los cálculos se basarán en el período de tiempo del gráfico.'
-indi_tf				= input.string			(defval = 'Gráfico',title = 'Temporalidad',		options = ['Gráfico', '5 Minutos', '15 Minutos', '1 Hora', '4 Horas', '1 Dia', '1 Semana', '1 Mes'],		group = genericGroup,		display = display,		tooltip = tfTTip)
+indi_tf				= input.string			(defval = 'Gráfico',title = 'Temporalidad',		options = ['Gráfico', '5 Minutos', '15 Minutos', '30 Minutos', '1 Hora', '2 Horas', '3 Horas', '4 Horas', '1 Dia', '1 Semana', '1 Mes'],		group = genericGroup,		display = display,		tooltip = tfTTip)
 hOffset				= input.int				(defval = 22,		title = 'Desplazamiento horizontal',	minval = 10,	maxval = 360,		group = genericGroup,		display = display)
 
 bullColor			= input.color			(MstColorBuy,		title = 'Paleta: Compra',							group = genericGroup,		inline = 'CSS')
@@ -399,14 +399,18 @@ timeframe(timeframe) =>
 	float chartTFinM = timeframe.in_seconds() / 60
 
 	switch 
-		timeframe == "5 Minutos"  and chartTFinM <= 5   => '5'
-		timeframe == "15 Minutos" and chartTFinM <= 15  => '15'
-		timeframe == "1 Hora"     and chartTFinM <= 60  => '60'
-		timeframe == "4 Horas"    and chartTFinM <= 240 => '240'
-		timeframe == "1 Dia"      and timeframe.isintraday => 'D'
+		timeframe == "5 Minutos"  and chartTFinM <= 5	=> '5'			// => '15'
+		timeframe == "15 Minutos" and chartTFinM <= 15	=> '15'			// => '60'
+		timeframe == "30 Minutos" and chartTFinM <= 30	=> '30'			// => '90'
+		timeframe == "1 Hora"     and chartTFinM <= 60	=> '60'			// => '120'
+		timeframe == "2 Hora"     and chartTFinM <= 120	=> '120'		// => '180'
+		timeframe == "3 Hora"     and chartTFinM <= 180	=> '180'		// => '240'
+		timeframe == "4 Horas"    and chartTFinM <= 240	=> '240'		// => '360'
+		timeframe == "1 Dia"      and timeframe.isintraday => 'D'		// => 'D'
 		timeframe == "1 Semana"   and (timeframe.isdaily or timeframe.isintraday) => 'W'
 		timeframe == "1 Mes"      and (timeframe.isweekly or timeframe.isdaily or timeframe.isintraday) => 'M'
 		=> timeframe.period
+	// 	=> str.tostring(str.tonumber(timeframe.period) * 2) 
 
 timeframeText(timeframe) =>
 	timeframeX = timeframe(timeframe)
