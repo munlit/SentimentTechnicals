@@ -28,7 +28,7 @@ indicator('Market Sentiment Technicals [@Allen.]', 'Market Sentiment Technicals'
 	// color.purple								= #9C27B0
 	// color.navy								= #311B92
 	// color.black								= #363A45
-	// color.gray								= MstColorHidden
+	// color.gray								= #787B86
 	// color.silver								= #B2B5BE
 	// color.white								= #FFFFFF
 
@@ -451,7 +451,7 @@ syminfo(symbol) =>
 interpolate(value, valueHigh, valueLow, rangeHigh, rangeLow) =>
 	rangeLow + (value - valueLow) * (rangeHigh - rangeLow) / (valueHigh - valueLow)
 
-normalize(buy, sell, smooth)=>
+normalize(buy, sell, smooth) =>
 	var os = 0
 	var float max = na
 	var float min = na
@@ -471,7 +471,7 @@ movingAverageValue(source, length, maType) =>
 		"WMA"  => ta.wma (source, length)
 		"VWMA" => ta.vwma(source, length)
 		
-rsi(source, length) =>
+FUNSenMarTRSI(source, length) =>
 	rsi = ta.rsi(source, length)
 
 	switch
@@ -535,7 +535,7 @@ supertrend(factor, period) =>
 
 	normalize(close > supertrend1, close < supertrend1, norm_Smooth)
 
-vwapBands(source, anchor, stdev)=>
+vwapBands(source, anchor, stdev) =>
 	[_, upper, lower] = ta.vwap(source, timeframe.change(autoAnchor(anchor)), stdev)
 
 	normalize(close > upper, close < lower, norm_Smooth)
@@ -577,7 +577,7 @@ collectData(timeframe) =>
 
 	request.security(syminfo.tickerid, timeframe, 
 		  [close,
-		  rsi(rsi_Source, rsi_Length), 
+		  FUNSenMarTRSI(rsi_Source, rsi_Length), 
 		  stochastic(stoch_LengthK, stoch_SmoothK),
 		  stochastic(stochRSI_SourceRSI, stochRSI_LengthRSI, stochRSI_LengthK, stochRSI_SmoothK), 
 		  cci(cci_Source, cci_Length),
