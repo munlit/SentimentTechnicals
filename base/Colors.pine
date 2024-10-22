@@ -1,0 +1,387 @@
+/// ╔═══════════════════════════════╗
+/// ║ 	Colors						║
+/// ║ 	@	Allen 㔬				║
+/// ╚═══════════════════════════════╝
+
+//// ─────────────────────────────────────────────────────────────────────
+
+/// ─── Standard ──
+	// color.aqua								= #00BCD4
+	// color.blue								= #2196F3
+	// color.teal								= #00897B
+	// color.green								= #4CAF50
+	// color.olive								= #808000
+	// color.lime								= #00E676
+	// color.yellow								= #FFEB3B
+	// color.orange								= #FF9800
+	// color.maroon								= #880E4F
+	// color.red								= #FF5252
+	// color.fuchsia							= #E040FB
+	// color.purple								= #9C27B0
+	// color.navy								= #311B92
+	// color.black								= #363A45
+	// color.gray								= #787B86
+	// color.silver								= #B2B5BE
+	// color.white								= #FFFFFF
+
+/// ─── Ameritrade ───
+	// AmeTrWhite								= #FFFFFF								// AmeritradeWhite
+	// AmeTrGrayPlatinum						= #F7F7F7								// AmeritradeGrayPlatinum
+	// AmeTrGrayNickel							= #F1F1F1								// AmeritradeGrayNickel
+	// AmeTrGrayNickelDark20					= #C0C0C0								// AmeritradeGrayNickelDark20
+	// AmeTrGrayAluminum						= #E6E7E9								// AmeritradeGrayAluminum
+	// AmeTrGrayAsh								= #D8D8D8								// AmeritradeGrayAsh
+	// AmeTrGrayStone							= #999999								// AmeritradeGrayStone
+	// AmeTrGrayIron							= #666666								// AmeritradeGrayIron
+	// AmeTrGrayCharcoal						= #333333								// AmeritradeGrayCharcoal
+	// AmeTrBlack								= #000000								// AmeritradeBlack
+	// AmeTrGreenCabbage						= #EBF6E9								// AmeritradeGreenCabbage
+	// AmeTrGreenLight70						= #B4D6B2								// AmeritradeGreenLight70
+	// AmeTrGreenLight50						= #83BC7F								// AmeritradeGreenLight50
+	// AmeTrGreenNat							= #40a829								// AmeritradeGreenNat
+	// AmeTrGreenLight20						= #399333								// AmeritradeGreenLight20
+	// AmeTrGreen								= #087900								// AmeritradeGreen
+	// AmeTrGreenDark20							= #066000								// AmeritradeGreenDark20
+	// AmeTrGreenMoss							= #BEE7D3								// AmeritradeGreenMoss
+	// AmeTrGreenMint							= #6DC4BC								// AmeritradeGreenMint
+	// AmeTrGreenPine							= #38635A								// AmeritradeGreenPine
+	// AmeTrRedRose								= #FAD1CF								// AmeritradeRedRose
+	// AmeTrRedLight50							= #E08988								// AmeritradeRedLight50
+	// AmeTrRedLight20							= #CD4241								// AmeritradeRedLight20
+	// AmeTrRed									= #C11312								// AmeritradeRed
+	// AmeTrRedDark20							= #940F0E								// AmeritradeRedDark20
+	// AmeTrOrangePeach							= #FCE7CA								// AmeritradeOrangePeach
+	// AmeTrOrangeCarrot						= #ED8902								// AmeritradeOrangeCarrot
+	// AmeTrOOrangeYam							= #BD5310								// AmeritradeOOrangeYam
+	// AmeTrBlueFrost							= #E1EEF9								// AmeritradeBlueFrost
+	// AmeTrBlueLagoon							= #316486								// AmeritradeBlueLagoon
+	// AmeTrBlueNavy							= #2A5673								// AmeritradeBlueNavy
+	// AmeTrBlueNcean							= #64A1C6								// AmeritradeBlueNcean
+	// AmeTrPurpleEggPlant						= #732181								// AmeritradePurpleEggPlant
+
+/// ─── Axi ───
+	// AxiPrimary								= #FC404D								// AxiPrimary				/// ► ◄ ▲ ▼
+	// AxiSecondary								= #282424								// AxiSecondary				/// ↑ ↓ → ←
+	// AxiAccent								= #61CE70								// AxiAccent
+	// Axi7a46f22								= #D11C36								// Axi7a46f22				/// @|1↓→9|1→5|.-|_789_|	/// coint|1↓→6|1→6|.-|_47_|
+	// Axi1519066c								= #FC404D								// Axi1519066c				/// @|1↓→6|1↓→6|!|_7_|		/// coint|1↓→9|1→4|.!|_4_|
+	// Axi3d4fa1a1								= #F0EBE3								// Axi3d4fa1a1				/// @|1↓→9|1↓→9|!|_7_|		/// coint|1↓→9|1→6|.-|_1_|		/// ok|1↓→6|1→5|.-|_147_|		/// |1↓→9|1→4|.!|_4_|
+	// Axi638b46c1								= #FCD758								// Axi638b46c1				/// @|1→↑12|.-|_147_|
+	// Axid07bac9								= #F9B4A8								// Axid07bac9				/// @|1→↑12|.-|_741_|
+	// Axie63a114								= #2C4D5A								// Axie63a114				/// @|1→↑12|.-|_852_|		/// gt|1→↑10|.-|_52_|			/// zoo|1→↑10|.-|_82_|			/// |1→↑11|.-|_82_|
+	// Axi8bf0845								= #A4D866								// Axi8bf0845				/// @|1→↑12|.-|_852_|		/// thinkors|1→↑9|_8_|2|		/// book|1→↑9|_8_|2|			/// disc|1→↑10|.-|_63_|
+	// Axi75c6da1								= #282424								// Axi75c6da1				/// @|1→↑12|.-|_963_|		/// lbx|1→↑11|.-|852|
+	// Axi378280f								= #45C2C7								// Axi378280f				/// @|1↓→9|1→6|.|_4_|		/// ok|1↓→6|1→4|.!|_789_|
+	// Axi4de92c5								= #6CADDF								// Axi4de92c5				/// @|1→↑13|.-!|_963_|		/// exch|1→↑10|.-|_85_|
+	// Axi413dab8			   					= #00275D								// Axi413dab8											/// hotm|1→↑10|.-|_7_|			/// ins|1→↑10|.-|_95_|
+	// Axib3fab89								= #55165C								// Axib3fab89
+	// Axi548138f								= #45C2C7								// Axi548138f				/// ► ◄ ▲ ▼
+	// Axi5ed9920								= #EA1616								// Axi5ed9920				/// ↑ ↓ → ←
+	// Axi70f7335								= #DD0606								// Axi70f7335
+
+/// ─── GrayScale ───
+	// GraySFocus								= #2D7AED								// GrayScaleFocus
+	// GraySWhite								= #FFF									// GrayScaleWhite
+	// GraySBlack								= #000									// GrayScaleBlack
+	// GraySPrimaryBlackberry					= #2E234B								// GrayScalePrimaryBlackberry
+	// GraySPrimaryBlackberry40					= rgba(46, 35, 75, .4))					// GrayScalePrimaryBlackberry40
+	// GraySPrimaryBlackberry65					= rgba(46, 35, 75, .65))				// GrayScalePrimaryBlackberry65
+	// GraySPrimaryCoral						= #FFB198								// GrayScalePrimaryCoral
+	// GraySSecondaryForestGreen				= #244024								// GrayScaleSecondaryForestGreen
+	// GraySSecondaryKeyLime					= #B5CE6F								// GrayScaleSecondaryKeyLime
+	// GraySSecondaryLavender					= #C5BFE4								// GrayScaleSecondaryLavender
+	// GraySSecondaryLavender40					= rgba(197, 191, 228, .4))				// GrayScaleSecondaryLavender40
+	// GraySsecondaryLavender60					= rgba(197, 191, 228, .6))				// GrayScalesecondaryLavender60
+	// GrayShoverWhite							= #C0BDC9								// GrayScalehoverWhite
+	// GrayShoverBlackberry						= #42326B								// GrayScalehoverBlackberry
+	// GraySdisabledBlackberry					= #4D4466								// GrayScaledisabledBlackberry
+	// GraySactiveBlackberry					= #4D4466								// GrayScaleactiveBlackberry
+	// GrayShoverCcoral							= #FFCDBD								// GrayScalehoverCcoral
+	// GraySactiveCcoral						= #FF9E80								// GrayScaleactiveCcoral
+	// GrayShoverGray							= #827B93								// GrayScalehoverGray
+	// GrayShoverGray2							= #6D6581								// GrayScalehoverGray2
+	// GraySgrayCharcoal						= #282525								// GrayScalegrayCharcoal
+	// GraySgrayCharcoal70						= rgba(40, 37, 37, .7))					// GrayScalegrayCharcoal70
+	// GraySgrayCharcoal80						= rgba(40, 37, 37, .8))					// GrayScalegrayCharcoal80
+	// GraySgrayLight							= #F5F5F5								// GrayScalegrayLight
+	// GraySgrayMedium							= #EEE									// GrayScalegrayMedium
+	// GraySgray70								= #696666								// GrayScalegray70
+	// GraySgrayDark							= #C1C1C1								// GrayScalegrayDark
+	// GraySwebSeasalt		    				= #FAFAFC								// GrayScalewebSeasalt
+	// GraySwebDivider							= #e9e7f1								// GrayScalewebDivider
+	// GraySwebBackground						= #f3f2fa								// GrayScalewebBackground
+	// GraySwebSecondaryText					= #77708A								// GrayScalewebSecondaryText
+	// GraySwebStroke							= #D3CEEB								// GrayScalewebStroke
+	// GraySwebErrors							= #E00000								// GrayScalewebErrors
+	// GraySwebService							= #2D7AED								// GrayScalewebService
+
+/// ─── Interactive ───
+	// IntAcPrimary3							= hsla(355, 85%, 46%, 0.03)		    	// InteractivePrimary3
+	// IntAcPrimary5							= hsla(355, 85%, 46%, 0.05)		    	// InteractivePrimary5
+	// IntAcPrimary10							= hsla(355, 85%, 46%, 0.10)		    	// InteractivePrimary10
+	// IntAcPrimary20							= hsla(355, 85%, 46%, 0.20)		    	// InteractivePrimary20
+	// IntAcPrimary30							= hsla(355, 85%, 46%, 0.30)		    	// InteractivePrimary30
+	// IntAcPrimary40							= hsla(355, 85%, 46%, 0.40)		    	// InteractivePrimary40
+	// IntAcPrimary50							= hsla(355, 85%, 46%, 0.50)		    	// InteractivePrimary50
+	// IntAcPrimary60							= hsla(355, 85%, 46%, 0.60)		    	// InteractivePrimary60
+	// IntAcPrimary70							= hsla(355, 85%, 46%, 0.70)		    	// InteractivePrimary70
+	// IntAcPrimary80							= hsla(355, 85%, 46%, 0.80)		    	// InteractivePrimary80
+	// IntAcPrimary90							= hsla(355, 85%, 46%, 0.90)		    	// InteractivePrimary90
+	// IntAcPrimary								= hsla(355, 85%, 46%, 1.0)				// InteractivePrimary
+	// IntAcPrimaryDark10						= hsla(355, 85%, 41%, 1.0)				// InteractivePrimaryDark10
+	// IntAcPrimaryDark20						= hsla(355, 85%, 36%, 1.0)				// InteractivePrimaryDark20
+	// IntAcPrimaryDark30						= hsla(355, 85%, 31%, 1.0)				// InteractivePrimaryDark30
+	// IntAcPrimaryDark40						= hsla(355, 85%, 26%, 1.0)				// InteractivePrimaryDark40
+	// IntAcPrimaryDark50						= hsla(355, 85%, 21%, 1.0)				// InteractivePrimaryDark50
+	// IntAcSecondary3							= hsla(0, 0%, 13%, 0.03)				// InteractiveSecondary3
+	// IntAcSecondary5							= hsla(0, 0%, 13%, 0.05)				// InteractiveSecondary5
+	// IntAcSecondary10							= hsla(0, 0%, 13%, 0.10)				// InteractiveSecondary10
+	// IntAcSecondary20							= hsla(0, 0%, 13%, 0.20)				// InteractiveSecondary20
+	// IntAcSecondary30							= hsla(0, 0%, 13%, 0.30)				// InteractiveSecondary30
+	// IntAcSecondary40							= hsla(0, 0%, 13%, 0.40)				// InteractiveSecondary40
+	// IntAcSecondary50							= hsla(0, 0%, 13%, 0.50)				// InteractiveSecondary50
+	// IntAcSecondary60							= hsla(0, 0%, 13%, 0.60)				// InteractiveSecondary60
+	// IntAcSecondary70							= hsla(0, 0%, 13%, 0.70)				// InteractiveSecondary70
+	// IntAcSecondary80							= hsla(0, 0%, 13%, 0.80)				// InteractiveSecondary80
+	// IntAcSecondary90							= hsla(0, 0%, 13%, 0.90)				// InteractiveSecondary90
+	// IntAcSecondary							= hsla(0, 0%, 13%, 1.0)			    	// InteractiveSecondary
+	// IntAcSecondaryDark10						= hsla(0, 0%, 10%, 1.0)			    	// InteractiveSecondaryDark10
+	// IntAcSecondaryDark20						= hsla(0, 0%, 7%, 1.0)					// InteractiveSecondaryDark20
+	// IntAcSecondaryDark30						= hsla(0, 0%, 4%, 1.0)					// InteractiveSecondaryDark30
+	// IntAcSecondaryDark40						= hsla(0, 0%, 1%, 1.0)					// InteractiveSecondaryDark40
+	// IntAcSecondaryDark50						= hsla(0, 0%, 0%, 1.0)					// InteractiveSecondaryDark50
+	// IntAcTertiary3							= hsla(202, 76%, 19%, 0.03)		    	// InteractiveTertiary3
+	// IntAcTertiary5							= hsla(202, 76%, 19%, 0.05)		    	// InteractiveTertiary5
+	// IntAcTertiary10							= hsla(202, 76%, 19%, 0.10)		    	// InteractiveTertiary10
+	// IntAcTertiary20							= hsla(202, 76%, 19%, 0.20)		    	// InteractiveTertiary20
+	// IntAcTertiary30							= hsla(202, 76%, 19%, 0.30)		    	// InteractiveTertiary30
+	// IntAcTertiary40							= hsla(202, 76%, 19%, 0.40)		    	// InteractiveTertiary40
+	// IntAcTertiary50							= hsla(202, 76%, 19%, 0.50)		    	// InteractiveTertiary50
+	// IntAcTertiary60							= hsla(202, 76%, 19%, 0.60)		    	// InteractiveTertiary60
+	// IntAcTertiary70							= hsla(202, 76%, 19%, 0.70)		    	// InteractiveTertiary70
+	// IntAcTertiary80							= hsla(202, 76%, 19%, 0.80)		    	// InteractiveTertiary80
+	// IntAcTertiary90							= hsla(202, 76%, 19%, 0.90)		    	// InteractiveTertiary90
+	// IntAcTertiary							= hsla(202, 76%, 19%, 1.0)				// InteractiveTertiary
+	// IntAcTertiaryDark10						= hsla(202, 76%, 14%, 1.0)				// InteractiveTertiaryDark10
+	// IntAcTertiaryDark20						= hsla(202, 76%, 9%, 1.0)				// InteractiveTertiaryDark20
+	// IntAcTertiaryDark30						= hsla(202, 76%, 4%, 1.0)				// InteractiveTertiaryDark30
+	// IntAcTertiaryDark40						= hsla(202, 76%, 0%, 1.0)				// InteractiveTertiaryDark40
+
+/// ─── Visa ───
+	// VisPrimary								= #1434CB								// VisaBrandPrimary			/// ► ◄ ▲ ▼
+	// VisPrimaryLight							= #3B57DE								// VisaBrandPrimaryLight	/// ↑ ↓ → ←
+	// VisPrimaryDark							= #021E4C								// VisaBrandPrimaryDark
+	// VisSecondary								= #FCC015								// VisaBrandSecondary		/// VT|1↓→6|1→5|!|_7_(.)|	/// coint|1↓→6|1→4|_7_.|		/// ok|1↓→6|1→4|.|_1_|			/// |1↓→6|1→4|!|_7_|		/// |1→6|1→↓6|_1_|  #910
+	// VisSecondaryLight						= #FFD700								// VisaBrandSecondaryLight	/// |1↓#→6|1↓→6|_789_|-!|	/// |1↓→6|1→4|-|_74_|
+	// VisSecondaryDark							= #F7B600								// VisaBrandSecondaryDark	/// @|1↓→6|1→4|!|_789_|
+	// VisTertiary7								= #2C2C2C								// VisaBrandTertiary7		/// @|1↓→6|1→6|.!|_4_(.)|
+	// VisTertiary6								= #5C5C5C								// VisaBrandTertiary6		/// @|1↓→9|1→6|.|_7_|		/// ()@|1↓→9|1→6|!|_7_|		/// bix|1↓→6|1→3|.-|_1_|
+	// VisTertiary5								= #979797								// VisaBrandTertiary5		/// @|1↓→9|1→5|.!|_7_|
+	// VisTertiary4								= #B9B9B9								// VisaBrandTertiary4		/// @|1↓→6|1→5|-|_714_|		/// bix|1↓→3|1→5|.-|_789_|
+	// VisTertiary3								= #DEDEDE								// VisaBrandTertiary3		/// @|1→↓6|1→5|_741_|
+	// VisTertiary2								= #EEEEEE								// VisaBrandTertiary2									/// ap|1→↓6|1→5|!|_7_|
+	// VisTertiary1								= #F7F7F7								// VisaBrandTertiary1		/// @|1→↑12|.-|_741_|		/// gt|1→↑10|.-|_6_|
+
+/// ─── Latam ───
+	// LatRedBackground							= rgb(232, 17, 75)						// Latam Red Background
+
+/// ─── Surfe ──
+	// SurfePrimary								= #073742
+	// SurfeSecondary							= #FFA2EA
+	// SurfeSky100								= #EBFAFE
+	// SurfeSky200								= #D1F2FD
+	// SurfeSky300								= #BDEDFC
+	// SurfeSky400								= #88D7F0
+	// SurfeSky500								= #73C7E1
+	// SurfeSky800								= #1798C1
+	// SurfeSeaweed100							= #073742
+	// SurfeSeaweed200							= #08272E
+	// SurfeSunrise100							= #FEFFD6
+	// SurfeSunrise150							= #F8FABB
+	// SurfeSunrise200							= #FDFFAD
+	// SurfeSunrise300							= #FCFF8F
+	// SurfeHorizonLight						= #FFF2FC
+	// SurfeHorizon100							= #FFDEF7
+	// SurfeHorizon200							= #FFBCF0
+	// SurfeHorizon300							= #FFA2EA
+	// SurfePink100								= #FFF1FC
+	// SurfePink500								= #FC84E1
+	// SurfePink600								= #D160B7
+	// SurfeSunset50							= #FFECE1
+	// SurfeSunset100							= #FFCFB4
+	// SurfeSunset200							= #FF9F6A
+	// SurfeSunset300							= #FF9254
+	// SurfeGray50								= #FAFAFA
+	// SurfeGray100								= #F4F5F6
+	// SurfeGray150								= #EBEFF0
+	// SurfeGray200								= #E0E5E6
+	// SurfeGray300								= #C1CACD
+	// SurfeGray400								= #889BA0
+	// SurfeGray450								= #5C818A
+	// SurfeGray500								= #5A6C71
+	// SurfeGray600								= #49575B
+	// SurfeGray700								= #3A4446
+	// SurfeGray800								= #22282A
+	// SurfeGray900								= #15191A
+
+/// ─── CitiBank ──
+	// CitiAccentNearWhite						= #F5F7FC
+	// CitiAccentUltraLightBlue					= #E6F7FF
+	// CitiAccentLightBlue						= #CCEEFF								// #CEF
+	// CitiAccentUltraLightRed					= #FCD9D9
+	// CitiAccentLightRed						= #FFF2F3
+	// CitiAccentFuchsia						= #C6007E
+	// CitiAccentLavender						= #A05EB5
+	// CitiAccentPurple							= #6B3077
+	// CitiAccentPlum							= #890C58
+	// CitiAccentBurntOrange					= #CB6015
+	// CitiAccentTangerine						= #ED8B00
+	// CitiAccentYellow							= #FFCD00
+	// CitiAccentGoldenrod						= #C99700
+	// CitiAccentOlive							= #949300
+	// CitiAccentLime							= #C4D600
+	// CitiAccentGreen							= #84BD00
+	// CitiAccentForest							= #00843D
+	// CitiAccentTeal							= #007377
+	// CitiAccentAqua							= #00B0B9
+	// CitiProductCredito						= #056DAE
+	// CitiAccountMaestra						= #343434
+	// CitiAccountEjecutivo						= #666
+	// CitiAccountPerfiles						= #056DAE
+	// CitiSegmentPrivada						= #000
+	// CitiSegmentPriority						= #0E2A48
+	// CitiSegmentPatrimonial					= #B4975A
+	// CitiCardMartiClasica						= #1A2E52
+	// CitiCardLaverde							= #004D2F
+	// CitiCardPremia							= #1A2E52
+	// CitiCardTeleton							= #653279
+	// CitiCardRewards							= #065C77
+	// CitiCardPrestige							= #666
+	// CitiCardPumas							= #1A2E52
+	// CitiCardMartiPremium						= #2B2B2B
+	// CitiCardSimplicity						= #1A2E52
+	// CitiCardHomeDepot						= #E57200
+	// CitiCardBeyond							= #2B2B2B
+	// CitiCardBsmart							= #056DAE
+	// CitiCardAfinity							= #2B2B2B
+	// CitiCardAadvantage						= #998847
+	// CitiCitiR1								= #ED1C24
+	// CitiCitiB3								= #3ABAED
+	// CitiCitiB2								= #056DAE
+	// CitiCitiB1								= #1A2E52
+	// CitiSystemUltraLightWarning				= #FFFBF2
+	// CitiSystemUltraLightSuccess				= #F4FFF2
+	// CitiSystemUltraLightInformation			= #E6F7FF
+	// CitiSystemUltraLightDanger				= #FFF2F3
+	// CitiSystemLightWarning					= #FFF2D9
+	// CitiSystemLightSuccess					= #DFFFD9
+	// CitiSystemLightInformation				= #B7F2FF
+	// CitiSystemLightDanger					= #FCD9D9
+	// CitiSystemWarning						= #FF8C19
+	// CitiSystemSuccess						= #093
+	// CitiSystemInfo							= #0059B3
+	// CitiSystemError							= #C00
+	// CitiMonoWhite							= #FFF
+	// CitiMonoUltraLightGray					= #F8F8F8
+	// CitiMonoLightGray						= #D3DAEA
+	// CitiMonoMediumGray						= #ACB3BF
+	// CitiMonoGray								= #8A8F99
+	// CitiMonoDarkGray							= #5C5F66
+	// CitiMonoSlateGray						= #292C33
+
+/// ─── Arbe Robotics ───
+	// ARoPrimary								= #0035FF								// ArbePrimary
+	// ARoPrimaryLight							= #0640FF								// ArbePrimaryLight
+	// ARoSecondary		    					= #04EBFF								// ArbeSecondary
+
+/// ─── AutoX ───
+	// AxPrimary								= #2253F0								// AutoXPrimary
+	// AxPrimaryLight							= #0050F9								// AutoXPrimaryLight
+	// AxSecondary								= #75EBC0								// AutoXSecondary
+
+/// ─── EEG ───
+	// EEGSkyBlue30								= #01EBF9								// EEGSkyBlue30
+	// EEGSkyBlue40								= #00E7FD								// EEGSkyBlue40
+	// EEGFucsia40								= #FF00B1								// EEGFucsia40
+	// EEGFucsia50								= #FE0CB6								// EEGFucsia50
+
+/// ─── Bright Line ───
+	// BrLiYel10								= #FBFD73								// BrightLine Yellow Light
+	// BrLiYel20								= #FFFD52								// BrightLine Yellow Light
+	// BrLiYel30								= #FDF43C								// BrightLineB Yellow High
+	// BrLiYel40								= #FEF301								// BrightLineBackground Yellow Nit
+	// BrLiYel50								= #FFDB00								// BrightLineBackground Yellow Base
+
+/// ─── Waves Beh ───
+	// WavBehPink20								= #FFB7FF								// WavBehPink20
+	// WavBehFucsia50							= #DF36DF								// WavBehFucsia50
+	// WavBehNude10								= #FFFDDF								// WavBehNude10
+	// WavBehSky70								= #06B7FE								// WavBehSky70
+	// WavBehAqua50								= #0CF2F2								// WavBehAqua50
+
+/// ─── Victoria Secret ───
+	// VictSecPink20							= #EDB3DD								// VictSecPink20
+	// VictSecPink50							= #E651CD								// VictSecPink50
+	// VictSecFucsia50							= #EA1889								// VictSecFucsia50
+	// VictSecWine30							= #C2329F								// VictSecWine30
+	// VictSecWine50							= #7D1250								// VictSecWine50
+	// VictSecWine60							= #7C2558								// VictSecWine60
+
+/// ─── Mongo DB ───
+	// MongoSky10								= #E3FCF7								// MongoDBSky10
+	// MongoYellow50							= #FFE212								// MongoDBYellow50
+	// MongoLime50								= #B1FF05								// MongoDBLime50
+	// MongoGreen50								= #00ED64								// MongoDBGreen50
+	// MongoGreen60								= #13AA52								// MongoDBGreen60
+	// MongoGreen70								= #00684A								// MongoDBGreen70
+	// MongoGreen80								= #014E3D								// MongoDBGreen80
+	// MongoGray50								= #42494F								// MongoDBGray50
+	// MongoGray70								= #001E2B								// MongoDBGray70
+	// MongoBlack50								= #231F20								// MongoDBBlack50
+
+/// ─── Platzi ───
+	// PlatziGreen30							= #ADEB42								// PlatziGreen60
+	// PlatziGreen40							= #85C638								// PlatziGreen60
+	// PlatziGreen50							= #95CA3E								// PlatziGreen50
+	// PlatziGreen60							= #98CA3F								// PlatziGreen40
+	// PlatziBlue50								= #24385B								// PlatziBlue50
+	// PlatziBlue70								= #121F3D								// PlatziBlue70
+	// PlatziBlue80								= #0C1633								// PlatziBlue80
+
+/// ─── Ultr ───
+	// UltrBlueSky10							= #59F2E9								// UltrBlueSky10
+	// UltrBlueSky20							= #39F0EA								// UltrBlueSky20
+	// UltrMenta10								= #E0F9EF								// UltrMenta10
+	// UltrMenta20								= #80F3EC								// UtlrMenta20
+	// UltrMenta30								= #7FFFD4								// UltrMenta30
+	// UltrMenta40								= #73FFCA								// UltrMenta40
+	// UltrMenta50								= #9CFFD7								// UtlrMenta50
+	// UltrMenta60								= #4FFFC0								// UtlrMenta60
+	// UltrGreen50								= #95BD5F								// UltrGreen50
+	// UltrRose20								= #FFA3E3								// UltrRose
+	// UltrFucsia30								= #FF6FD3								// UltrFucsia
+	// UltrLyla									= #7E57C2								// UltrLyla
+	// UltrLightGray							= #787B86								// UltrLightGray
+	// UltrRedNit								= #DE0011								// UltrRedNit
+	// UltrRed									= #DB004B								// UltrRed
+	// UltrBlue									= #003BDE								// UltrBlue
+	// UltrYellow								= #F4DE1A								// UltrYellow
+	// UltrSkyBlue								= #12CEF8								// UltrSkyBlue
+	// UltrOrange								= #FF5A00								// UltrOrange
+
+/// ─── Allen ───
+	// AllenSky10								= #CCF8FF								// AllenSky10
+	// AllenSky20								= #80F3EC								// AllenSky20
+	// AllenSky50								= #01EBF9								// AllenSky50
+	// AllenMint10								= #E0F9EF								// AllenMint10
+	// AllenMint20								= #9CFFD7								// AllenMint20
+	// AllenMint30								= #7FFFD4								// AllenMint30
+	// AllenMint40								= #73FFCA								// AllenMint40
+	// AllenMint50								= #4FFFC0								// AllenMint50
+	// AllenMint60								= #33FFAC								// AllenMint60
+	// AllenFucsia30							= #E06BAA								// AllenFucsia30
+	// AllenFucsia50							= #EA1889
+	// AllenWine50								= #E91E63								// AllenWine50
+	// AllenWine60								= #E8114B								// AllenWine60
+
+//// ─────────────────────────────────────────────────────────────────────
