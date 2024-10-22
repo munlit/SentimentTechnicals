@@ -5,7 +5,7 @@
 // ╚════════════════════════════════════╝
 
 //@version=5
-indicator('Market Sentiment Technicals [@Allen.]', 'Market Sentiment Technicals', true, scale = scale.none)
+indicator('Market Sentiment Technicals [🎱Allen 㔬]', 'Market Sentiment Technicals', true, scale = scale.none)
 
 //// ─────────────────────────────────────────────────────────────────────
 
